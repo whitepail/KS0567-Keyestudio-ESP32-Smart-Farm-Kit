@@ -1,14 +1,14 @@
-# Обучающие программы по скретчу
+# Обучающие программы по Scratch
 
 ## Установка программного обеспечения
 
-### Установка детского блока
+### Установка Kidsblock
 
 #### Установить Kidsblock в системе Windows
 
 1. Вы можете скачать KidsBlock с сайта: 
 
-   - Ссылка: [http://xiazai.keyesrobot.cn/KidsBlock.exe ](http://xiazai.keyesrobot.cn/KidsBlock.exe )
+   - Ссылка: [https://wiki.kidsbits.cc/projects/KidsBlock/en/latest/download/](https://wiki.kidsbits.cc/projects/KidsBlock/en/latest/download/)
 
    - Предоставленный файл: ![img](./scratch_img/an1-1.png)
 
@@ -41,7 +41,7 @@
 
 #### Установить Kidsblock на macOS
 
-1. Пожалуйста, сначала скачайте пакет Kidsblock: [http://xiazai.keyesrobot.cn/KidsBlock.dmg](http://xiazai.keyesrobot.cn/KidsBlock.dmg)
+1. Пожалуйста, сначала скачайте пакет Kidsblock: [https://wiki.kidsbits.cc/projects/KidsBlock/en/latest/download/](https://wiki.kidsbits.cc/projects/KidsBlock/en/latest/download/)
 
 ![img](./scratch_img/an7.png)
 
@@ -464,25 +464,25 @@
 ------
 
 
-### Step 4
+### Шаг 4
 
 ------
 
-#### 4.1 Required components
+#### 4.1 Необходимые компоненты
 
 ![img](./scratch_img/image027.png)
 
 ------
 
-#### 4.2 Set Servo to 180°
+#### 4.2 Установите сервопривод на 180°
 
-**Before mount the servo, firstly please set the angle to 180° by programming: Arduino(C++) or Scratch(Graphical programming).**
+**Перед установкой сервопривода, пожалуйста, сначала установите угол наклона на 180° с помощью программирования: Arduino (C++) или Scratch (графическое программирование).**
 
-Please refer to the software installation steps for details.
+Пожалуйста, ознакомьтесь с инструкциями по установке программного обеспечения для получения подробной информации.
 
 
 
-**Connect Servo to ESP32 development board at pin IO26.**
+**Подключите сервопривод к плате разработки ESP32 по выводу IO26.**
 
 ![img](./scratch_img/image028-1.png)
 
@@ -493,15 +493,15 @@ Please refer to the software installation steps for details.
 ------
 
 
-- Open **Scratch 3.0**. Select ESP32 board and the correct serial port, and burn the following code to the board.
+- Открыть **Scratch 3.0**. Выберите плату ESP32 и правильный последовательный порт и запишите следующий код на плату.
 
   ![img](./scratch_img/image028-2.png)
 
-**After setting the servo to a specific angle, disconnect the it from the development board for installation.**
+**После установки сервопривода под определенным углом отсоедините его от платы разработки для установки.**
 
 ------
 
-#### 4.3 Install Servo
+#### 4.3 Установка сервопривода
 
 ![img](./scratch_img/image029.png)
 
@@ -517,7 +517,7 @@ Please refer to the software installation steps for details.
 
 ![img](./scratch_img/image031.png)
 
-Don’t screw over the gear.
+Не испортите механизм.
 ![img](./scratch_img/6e1caadec8b1ec99b0093200763607b6.jpg)
 
 ------
@@ -542,7 +542,7 @@ Don’t screw over the gear.
 
 #### 4.9 
 
-**NOTE: When installing the lid of the feeding box, its opening should be fully closed.**
+**ПРИМЕЧАНИЕ: При установке крышки кормушки ее отверстие должно быть полностью закрыто.**
 
 ![img](./scratch_img/image035.png)
 
@@ -568,11 +568,11 @@ Don’t screw over the gear.
 
 
 
-### Step 5
+### Шаг 5
 
 ------
 
-#### 5.1 Required components
+#### 5.1 Необходимые компоненты
 
 ![img](./scratch_img/image038.png)
 
@@ -596,24 +596,24 @@ Don’t screw over the gear.
 
 ------
 
-#### 5.5 Prototype
+### Прототип # 5.5
 
 ![img](./scratch_img/image042.png)
 
 ------
 
-#### 5.6 Wiring
+#### 5.6 Подключение
 
-**Connect modules via Dupont wires.**
+**Подключайте модули с помощью проводов Dupont.**
 
-|             Module              |              Wire               |
+| Модуль | Провод /
 | :-----------------------------: | :-----------------------------: |
-| Temperature and Humidity Sensor |            3PIN 20cm            |
-|            LCD 1602             | 4PIN **(Black-Red-Blue-Green)** |
+| Датчик температуры и влажности | 3-контактный, 20 см |
+| LCD 1602 | 4-контактный **(черный-красный-синий-зеленый)** |
 
-**Pay attention to the color of the Dupont wire:**
+**Обратите внимание на цвет провода Dupont:**
 
-**For temperature and humidity sensor, connect yellow to S, red to V, black to G.**
+**Для датчика температуры и влажности подключите желтый к S, красный к V, черный к G.**
 
 ![img](./scratch_img/image043.png)
 
@@ -621,7 +621,7 @@ Don’t screw over the gear.
 
 #### 5.7
 
-**For the LCD display, connect green to SCL, blue to SDA, red to VCC, black to GND.**
+**Для ЖК-дисплея подключите зеленый к SCL, синий к SDA, красный к VCC, черный к GND.**
 
 ![img](./scratch_img/image044.png)
 
@@ -629,11 +629,11 @@ Don’t screw over the gear.
 
 
 
-### Step 6
+### Шаг 6
 
 ------
 
-#### 6.1 Required components
+#### 6.1 Необходимые компоненты.
 
 ![img](./scratch_img/image045.png)
 
@@ -651,23 +651,23 @@ Don’t screw over the gear.
 
 ------
 
-#### 6.4 Wiring
+#### 6.4 Подключение
 
-|      Module       |              Wire               |
+| Модуль | Провод |
 | :---------------: | :-----------------------------: |
-| Ultrasonic module | 4PIN **(Black-Green-Blue-Red)** |
+| Ультразвуковой модуль | 4PIN ** (Черный-зеленый-Синий-красный)** |
 
-**Pay attention to the color of the Dupont wire: For the ultrasonic module, connect blue to TRIG,green  to ECHO, red to VCC, black to GND.**
+**Обратите внимание на цвет провода Dupont: для ультразвукового модуля подключите синий к TRIG, зеленый к ECHO, красный к VCC, черный к GND.**
 
 ![img](./scratch_img/image048.png)
 
 ------
 
-### Step 7
+### Шаг 7
 
 ------
 
-#### 7.1 Required components
+#### 7.1 Необходимые компоненты
 
 ![img](./scratch_img/image049.png)
 
@@ -685,16 +685,16 @@ Don’t screw over the gear.
 
 ------
 
-#### 7.4 Wiring
+#### 7.4 Подключение
 
-**Connect modules via Dupont wires.**
+**Подключайте модули с помощью проводов Dupont.**
 
-|      Module       |   Wire    |
+| Модуль | Провод /
 | :---------------: | :-------: |
-| PIR Motion Sensor | 3PIN 15cm |
-|   Button Module   | 3PIN 15cm |
+| Датчик движения PIR | 3PIN 15 см |
+|   Кнопочный модуль | 3PIN 15 см |
 
-**Pay attention to the color of the Dupont wire: Connect yellow to S, red to V, black to G.**
+**Обратите внимание на цвет провода Dupont: желтый соедините с S, красный - с V, черный - с G.**
 
 ![img](./scratch_img/image052.png)
 
@@ -702,11 +702,11 @@ Don’t screw over the gear.
 
 
 
-### Step 8
+### Шаг 8
 
 ------
 
-#### 8.1 Required components
+#### 8.1 Необходимые компоненты
 
 ![img](./scratch_img/image053.png)
 
@@ -748,31 +748,31 @@ Don’t screw over the gear.
 
 ------
 
-#### 8.8 Prototype
+### Прототип # 8.8
 
 ![img](./scratch_img/image060.png)
 
 ------
 
-#### 8.9 Wiring
+#### 8.9 Подключение
 
-|    Module     |              Wire               |
+| Модуль | Провод |
 | :-----------: | :-----------------------------: |
-|      Fan      | 4PIN **(Black-Red-Blue-Green)** |
-| Steam Sensor  |            3PIN 15cm            |
-| Photoresistor |            3PIN 15cm            |
+| Вентилятор | 4PIN **(Черный-красный-синий-зеленый)** |
+| Датчик пара | 3PIN 15 см |
+| Фоторезистор | 3PIN 15 см |
 
-**Pay attention to the color of the Dupont wire: Connect yellow to S, red to V, black to G, blue to IN+, green to IN-.**
+**Обратите внимание на цвет провода Dupont: желтый соедините с S, красный - с V, черный - с G, синий - с IN+, зеленый - с IN-.**
 
 ![img](./scratch_img/image061.png)
 
 ------
 
-### Step 9
+### Шаг 9
 
 ------
 
-#### 9.1 Required components
+#### 9.1 Необходимые компоненты
 
 ![img](./scratch_img/image062.png)
 
@@ -790,7 +790,7 @@ Don’t screw over the gear.
 
 ------
 
-#### 9.4 Wiring
+#### 9.4 Подключение
 
 ![img](./scratch_img/image065.png)
 
@@ -798,11 +798,11 @@ Don’t screw over the gear.
 
 
 
-### Step 10
+### Шаг 10
 
 ------
 
-#### 10.1 Required components
+#### 10.1 Необходимые компоненты
 
 ![img](./scratch_img/image066.png)
 
@@ -820,7 +820,7 @@ Don’t screw over the gear.
 
 ------
 
-#### 10.4 Bottom View
+#### 10.4 Вид снизу
 
 ![img](./scratch_img/image069.png)
 
@@ -846,295 +846,295 @@ Don’t screw over the gear.
 
 
 
-### Step 11 Wiring
+### Шаг 11 Подключение
 
 ------
 
 #### 11.1 
 
-**Pay attention to the color of the Dupont wire: Connect yellow to S, red to V, black to G.**
+**Обратите внимание на цвет провода Dupont: желтый соедините с S, красный - с V, черный - с G.**
 
-| NO.  |           Components            |                 Wires                  |      ESP32 Board Pins      |
+| НОМЕР.  | Компоненты | Провода | Контакты платы ESP32 |
 | :--: | :-----------------------------: | :------------------------------------: | :------------------------: |
-|  1   |               Fan               | 4pin, **Divided** Black-Red-Blue-Green | io18(IN-)   \|   io19(IN+) |
-|  2   |        PIR Motion Sensor        |               3pin 15cm                |            io23            |
-|  3   |             Button              |               3pin 15cm                |            io5             |
-|  4   |        Ultrasonic Module        | 4pin,**Divided** Black-Green-Blue-Red  |    D12(TRIG) D13(ECHO)     |
-|  5   |            LCD 1602             |          4pin, **Connected**           |            I2C             |
-|  6   | Temperature and Humidity Sensor |               3pin 20cm                |            io17            |
-|  7   |          Steam Sensor           |               3pin 15cm                |            io35            |
-|  8   |          Photoresistor          |               3pin 15cm                |            io34            |
-|  9   |              Servo              |                   --                   |            io26            |
-|  10  |             Buzzer              |               3pin 20cm                |            io16            |
-|  11  |               LED               |               3pin 20cm                |            io27            |
-|  12  |       Water Level Sensor        |               3pin 25cm                |            io33            |
-|  13  |      Soil Humidity Sensor       |               3pin 20cm                |            io32            |
-|  14  |           Water Pump            |               3pin 20cm                |            io25            |
+| 1 | Вентилятор | 4-контактный, **Разделенный ** Черно-красно-сине-зеленый | io18(В-) \| io19(В+) |
+| 2 | Датчик движения PIR | 3-контактный, 15 см | io23 |
+| 3 | Кнопка | 3pin 15 см | io5 |
+| 4 | Ультразвуковой модуль | 4pin,**Разделенный** Черно-зелено-сине-Красный |    D12(ТРИГГЕР) D13(ЭХО) |
+| 5 | ЖК-дисплей 1602 | 4pin, **Подключен ** | I2C |
+| 6 | Датчик температуры и влажности | 3pin 20 см | io17 |
+| 7 | Датчик пара | 3pin 15 см | io35 |
+| 8 | Фоторезистор | 3pin 15 см | io34 |
+| 9 | Сервопривод | -- | io26 |
+| 10 | Зуммер | 3pin 20 см | io16 |
+| 11 | Светодиод | 3pin 20 см | io27 |
+| 12 | Датчик уровня воды | 3pin 25 см | io33 |
+| 13 | Датчик влажности почвы | 3pin 20 см | io32 |
+| 14 | Водяной насос | 3pin 20 см | io25 |
 
 
 
-#### 11.2 Fan
+#### 11.2 Вентилятор
 
-| Components |                    Wire                     |   ESP32 Board Pins   |
+| Компоненты | Провода | Контакты на плате ESP32 |
 | :--------: | :-----------------------------------------: | :------------------: |
-|    Fan     | 4PIN **Divided** **(Black-Red-Blue-Green)** | io18(IN-), io19(IN+) |
+| Вентилятор | 4-контактный **Разделенный** **(Черный-красный-синий-зеленый)** | io18(В-), io19(В+) |
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода /
 | :--------: | :--------: |
-|    IN-     |   GREEN    |
-|    IN+     |    BLUE    |
-|     V      |    RED     |
-|     G      |   BLACK    |
+| В- | ЗЕЛЕНЫЙ |
+| IN+ | СИНИЙ |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
 
 ![img](./scratch_img/image073.png)
 
 ------
 
-#### 11.3 PIR Motion Sensor
+#### 11.3 Датчик движения PIR
 
-|     Component     |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :---------------: | :-------: | :-------------: |
-| PIR Motion Sensor | 3PIN 15cm |      io23       |
+| Датчик движения PIR | 3PIN 15 см | io23 |
 
-**Connect red to V, black to G, yellow to S.**
+**Подключите красный к V, черный к G, желтый к S.**
 
-| Module Pin | Wire Color |
+| Контакт модуля / Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image074.png)
 
 ------
 
-#### 11.4 Button Module
+#### Модуль кнопок 11.4
 
-| Component |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :-------: | :-------: | :-------------: |
-|  Button   | 3PIN 15cm |       io5       |
+| Кнопка | 3-контактный разъем 15 см | io5 |
 
-**Connect red to V, black to G, yellow to S.**
+**Подключите красный к V, черный к G, желтый к S.**
 
-| Module Pin | Wire Color |
+| Контакт модуля / Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image075.png)
 
 ------
 
-#### 11.5 Ultrasonic Module  
+### Ультразвуковой модуль # 11.5  
 
-|     Component     |                    Wire                     |    ESP32 Board Pins    |
+| Компонент | Провод | Контакты платы ESP32 |
 | :---------------: | :-----------------------------------------: | :--------------------: |
-| Ultrasonic Module | 4PIN **Divided** **(Black-Green-Blue-Red)** | io13(ECHO), io12(TRIG) |
+| Ультразвуковой модуль | 4PIN **Разделенный** ** (Черный-зеленый-синий-красный)** | io13 (ЭХО), io12 (ТРИГГЕР) |
 
-**Connect red to V, black to G, blue to io12, green to io13.**
+**Подключите красный к V, черный к G, синий к io12, зеленый к io13.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|    ECHO    |   GREEN    |
-|    TRIG    |    BLUE    |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| ЭХО | ЗЕЛЕНЫЙ |
+| ТРИГОНОМЕТРИЯ | СИНИЙ |
 
 ![img](./scratch_img/image076.png)
 
 ------
 
-#### 11.6 LCD 1602
+#### 11.6 ЖК-дисплей 1602
 
-| Component |                     Wire                      | ESP32 Board Pins |
+| Компонент | Провод | Контакты платы ESP32 |
 | :-------: | :-------------------------------------------: | :--------------: |
-|  LCD1602  | 4PIN **Connected** **(Black-Red-Blue-Green)** |       I2C        |
+| ЖК-дисплей 1602 | 4PIN **Подключен** ** (Черный-красный-синий-зеленый)** | I2C |
 
-**Connect red to V, black to G, blue to SDA, green to SCL.**
+**Подключите красный к V, черный к G, синий к SDA, зеленый к SCL.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|    SCL     |   GREEN    |
-|    SDA     |    BLUE    |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| SCL | ЗЕЛЕНЫЙ |
+| SDA | СИНИЙ |
 
 ![img](./scratch_img/image077.png)
 
 ------
 
-#### 11.7 Temperature and Humidity Sensor  
+#### 11.7 Датчик температуры и влажности  
 
-|            Component            |   Wire    | ESP32 Board Pins |
+| Компонент | Провод | Контакты платы ESP32 |
 | :-----------------------------: | :-------: | :--------------: |
-| Temperature and Humidity Sensor | 3PIN 20cm |       io17       |
+| Датчик температуры и влажности | 3PIN 20 см | io17 |
 
-**Connect red to V, black to G, yellow to io17.**
+**Подключите красный к V, черный к G, желтый к io17.**
 
-| Module Pin | Wire Color |
+| Контакт модуля / Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image078.png)
 
 ------
 
-#### 11.8 Steam Sensor
+#### 11.8 Датчик пара
 
-|  Component   |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод на плате ESP32 |
 | :----------: | :-------: | :-------------: |
-| Steam Sensor | 3PIN 15cm |      io35       |
+| Датчик пара | 3PIN 15 см | io35 |
 
-**Connect red to V, black to G, yellow to io35.**
+**Подключите красный к V, черный к G, желтый к io35.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image079.png)
 
 ------
 
-#### 11.9 Photoresistor
+#### 11.9 Фоторезистор
 
-|   Component   |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод на плате ESP32 |
 | :-----------: | :-------: | :-------------: |
-| Photoresistor | 3PIN 15cm |      io34       |
+| Фоторезистор | 3PIN 15 см | io34 |
 
-**Connect red to V, black to G, yellow to io34.**
+**Подключите красный к V, черный к G, желтый к io34.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image080.png)
 
 ------
 
-#### 11.10 Servo
+#### 11.10 Сервопривод
 
-**Pass the wire of Servo through the Hole 15, and then connect it to ESP32 board.**
+**Пропустите провод сервопривода через отверстие 15, а затем подсоедините его к плате ESP32.**
 
-| Component | Wire | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :-------: | :--: | :-------------: |
-|   Servo   | 3PIN |      io26       |
+| Сервопривод | 3PIN | io26 |
 
-**Connect red to V, black to G, yellow to io26.**
+**Подключите красный к разъему V, черный к разъему G, желтый к разъему io26.**
 
-| Board Pin | Wire Color |
+| Контакт платы | Цвет провода |
 | :-------: | :--------: |
-|     V     |    RED     |
-|     G     |   BLACK    |
-|   IO26    |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| IO26 | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image081.png)
 
 ------
 
-#### 11.11 Buzzer
+#### 11.11 Звуковой сигнал
 
-**Pass the wire of Buzzer through the Hole 17, and then connect it to ESP32 board.**
+**Пропустите провод звукового сигнала через отверстие 17, а затем подключите его к плате ESP32.**
 
-| Component |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :-------: | :-------: | :-------------: |
-|  Buzzer   | 3PIN 20cm |      io16       |
+| Зуммер | 3PIN 20 см | io16 |
 
-**Connect red to V, black to G, yellow to io16.**
+**Подключите красный к V, черный к G, желтый к io16.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image082.png)
 
 ------
 
-#### 11.12 LED
+#### 11.12 СВЕТОДИОД
 
-**Pass the wire of LED through the Hole 7, and then connect it to ESP32 board.**
+**Пропустите провод светодиода через отверстие 7, а затем подключите его к плате ESP32.**
 
-| Component |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :-------: | :-------: | :-------------: |
-|    LED    | 3PIN 20cm |      io27       |
+| СВЕТОДИОД | 3PIN 20 см | io27 |
 
-**Connect red to V, black to G, yellow to io27.**
+**Подключите красный к V, черный к G, желтый к io27.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image083.png)
 
 ------
 
-#### 11.13 Water Lever Sensor
+#### 11.13 Датчик уровня воды
 
-**Pass the wire of water level sensor through the Hole 13, and then connect it to ESP32 board.**
+**Пропустите провод датчика уровня воды через отверстие 13, а затем подсоедините его к плате ESP32.**
 
-|     Component      |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :----------------: | :-------: | :-------------: |
-| Water Lever Sensor | 3PIN 25cm |      io33       |
+| Датчик уровня воды | 3-контактный разъем 25 см | io33 |
 
-**Connect red to V, black to G, yellow to io33.**
+**Подключите красный к разъему V, черный к разъему G, желтый к разъему io33.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image084.png)
 
 ------
 
-#### 11.14 Soil Humidity Sensor
+#### 11.14 Датчик влажности почвы
 
-**Pass the wire of soil humidity sensor through the Hole 11, and then connect it to ESP32 board.**
+**Пропустите провод датчика влажности почвы через отверстие 11, а затем подключите его к плате ESP32.**
 
-|      Component       |   Wire    | ESP32 Board Pin |
+| Компонент | Провод | Вывод платы ESP32 |
 | :------------------: | :-------: | :-------------: |
-| Soil Humidity Sensor | 3PIN 20cm |      io32       |
+| Датчик влажности почвы | 3-контактный, 20 см | io32 |
 
-**Connect red to V, black to G, yellow to io32.**
+**Подключите красный к V, черный к G, желтый к io32.**
 
-| Module Pin | Wire Color |
+| Контакт модуля / Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image085.png)
 
 ------
 
-#### 11.15 Relay Module  
+#### 11.15 Модуль реле  
 
-|  Component   | Wire | ESP32 Board Pin |
+| Компонент | Провод | Вывод на плате ESP32 |
 | :----------: | :--: | :-------------: |
-| Relay Module | 3PIN |      io25       |
+| Релейный модуль | 3PIN | io25 |
 
-**Pass the wire of Water Pump through the Hole 11 in the way as shown below:**
+**Пропустите провод водяного насоса через отверстие 11, как показано ниже:**
 
 ![img](./scratch_img/image086.png)
 
-**Connect red to V, black to G, yellow to io25.**
+**Подключите красный к V, черный к G, желтый к io25.**
 
-| Module Pin | Wire Color |
+| Вывод модуля | Цвет провода |
 | :--------: | :--------: |
-|     V      |    RED     |
-|     G      |   BLACK    |
-|     S      |   YELLOW   |
+| V | КРАСНЫЙ |
+| G | ЧЕРНЫЙ |
+| S | ЖЕЛТЫЙ |
 
 ![img](./scratch_img/image087.png)
 
@@ -1148,11 +1148,11 @@ Don’t screw over the gear.
 
 
 
-### Step 12
+### Шаг 12
 
 ------
 
-#### 12.1 Required components
+#### 12.1 Необходимые компоненты
 
 ![img](./scratch_img/image089.png)
 
@@ -1184,11 +1184,11 @@ Don’t screw over the gear.
 
 
 
-### Step 13
+### Шаг 13
 
 ------
 
-#### 13.1 Required components
+#### 13.1 Необходимые компоненты
 
 ![img](./scratch_img/image094.png)
 
@@ -1208,11 +1208,11 @@ Don’t screw over the gear.
 
 
 
-### Step 14
+### Шаг 14
 
 ------
 
-#### 14.1 Required components
+#### 14.1 Необходимые компоненты
 
 ![img](./scratch_img/image098.png)
 
@@ -1256,11 +1256,11 @@ Don’t screw over the gear.
 
 
 
-### Step 15
+### Шаг 15
 
 ------
 
-#### 15.1 Required components
+#### 15.1 Необходимые компоненты
 
 ![image-20230718085854136](./scratch_img/image-20230718085854136.png)
 
@@ -1286,11 +1286,11 @@ Don’t screw over the gear.
 
 
 
-### Step 16
+### Шаг 16
 
 ------
 
-#### 16.1 Required components
+#### 16.1 Необходимые компоненты
 
 ![image-20230718090031524](./scratch_img/image-20230718090031524.png)
 
@@ -1316,11 +1316,11 @@ Don’t screw over the gear.
 
 
 
-### Step 17
+### Шаг 17
 
 ------
 
-#### 17.1 Required components
+#### 17.1 Необходимые компоненты
 
 ![image-20230718090150918](./scratch_img/image-20230718090150918.png)
 
@@ -1340,7 +1340,7 @@ Don’t screw over the gear.
 
 
 
-### Step 18
+### Шаг 18
 
 ------
 
@@ -1408,7 +1408,7 @@ Don’t screw over the gear.
 
 
 
-### Step 19
+### Шаг 19
 
 ------
 
