@@ -1652,11 +1652,11 @@
 ![img](./scratch_img/st34.gif)
 
 
-#### A Button
+#### Кнопка
 
-##### Description
+##### Описание
 
-**Button Module** is a device to input. MCU reads its power level to detect whether the button is pressed. 
+**Кнопочный модуль** - это устройство для ввода данных. Микроконтроллер считывает уровень его мощности, чтобы определить, нажата ли кнопка. 
 
 ![img](./scratch_img/cou13.png)
 
@@ -1664,26 +1664,15 @@
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
 ![img](./scratch_img/couy12.png)
 
-**Parameters:**
+**Параметры:**
 
-- Voltage: 3~5V
-- Current: ≤1.1mA
-- Power: ≤5.5mW
-
-
-
-------
-
-
-
-**The principle of the button module is a circuit controlled by this button.**
-
-- **When the button is pressed**, the circuit is in closed state so that current passes through the button to GND, which causes the digital input pin to detect a low level.
-- **When the button is released**, the circuit is cut and pin level increases due to a pull-up resistor, which makes the digital pin to detect a high level.
+- Напряжение: 3 ~5 В
+- Ток: ≤1,1 мА
+- Мощность: ≤5,5МВт
 
 
 
@@ -1691,11 +1680,22 @@
 
 
 
-##### Wiring Diagram
+**Принцип работы кнопочного модуля основан на схеме, управляемой этой кнопкой.**
 
-**Connect the button module to io5**
+- **При нажатии кнопки** цепь находится в замкнутом состоянии, так что ток проходит через кнопку к GND, что приводит к обнаружению низкого уровня на выводе цифрового входа.
+- **При отпускании кнопки** цепь отключается, и уровень напряжения на выводе повышается благодаря повышающему резистору, который позволяет цифровому выводу обнаруживать высокий уровень.
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+
+
+------
+
+
+
+##### Схема подключения
+
+**Подключите кнопочный модуль к io5**
+
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj12.png)
 
@@ -1705,36 +1705,36 @@
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize the serial port first of all, and set baud rate to 115200.
+- Прежде всего, инициализируйте последовательный порт и установите скорость передачи данных в бодах на 115200.
 
   ![img](./scratch_img/st36.png)
 
-- Set pin to IO5 and mode to input. What follows it is a "**forever**" block.
+- Установите pin-код на IO5 и режим ввода. То, что следует за этим, - это блок "**навсегда**".
 
   ![img](./scratch_img/st37.png)
 
-- Read the power level of digital pin 5. If it is 1, print 1. Or else, print 0.
+- Считайте уровень мощности цифрового вывода 5. Если он равен 1, выведите 1. В противном случае выведите 0.
 
   ![img](./scratch_img/st38.png)
 
 
-Complete code: 
+Полный код: 
 
 ![img](./scratch_img/st35.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-Open serial monitor and set the corresponding baud rate. 
+Откройте serial monitor и установите соответствующую скорость передачи данных в бодах. 
 
-When the button is released, the value is 1; if you press the button, it becomes 0.
+Когда кнопка отпущена, значение равно 1; если вы нажмете кнопку, оно станет равным 0.
 
 ![img](./scratch_img/st39.png)
 
-In Scratch, we can read the state of the digital input pin by programming to detect whether the button is pressed. Thus, loads of interactive applications can be realized via a button module, such as LED on/off and display brightness adjustment. 
+В Scratch мы можем считывать состояние цифрового входного контакта, программируя, чтобы определить, нажата ли кнопка. Таким образом, с помощью кнопочного модуля можно реализовать множество интерактивных приложений, таких как включение / выключение светодиода и регулировка яркости дисплея. 
 
 
 
@@ -1742,43 +1742,43 @@ In Scratch, we can read the state of the digital input pin by programming to det
 
 
 
-##### Expansion: Auto-locking Button
+##### Расширение: Кнопка автоматической блокировки
 
-An auto-locking button won't pop up when you press it without holding, and it never pops up unless you press it again. It works like a switch. For regular buttons, such function can be realized via MCU and software. 
+Кнопка автоматической блокировки не выскакивает, когда вы нажимаете ее, не удерживая нажатой, и никогда не выскакивает, если вы не нажмете ее снова. Она работает как переключатель. Для обычных кнопок такая функция может быть реализована с помощью микроконтроллера и программного обеспечения. 
 
-###### Test Code
+###### Тестовый код
 
-- Define two variables: **item** as the read button value and **button** as the value shifted by button. 
+- Определите две переменные: **item** как значение кнопки чтения и **button** как значение, изменяемое кнопкой. 
 
   ![img](./scratch_img/st40.png)
 
-- Assign the read button value to **item**.
+- Присвоить кнопке чтения значение **item**.
 
   ![img](./scratch_img/st41.png)
 
-- Determine whether the button is pressed. If it is, shift the value of **button** and print it.
+- Определить, нажата ли кнопка. Если нажата, измените значение **button** и распечатайте его.
 
   ![img](./scratch_img/st43.png)
 
-  - Delay 0.01s to eliminate the button jitter. 
-    - If a close state is detected at the button, a delay will be executed to eliminate **Front Porch Jitter**. Generally, the delay is within 5ms～10ms (Mechanical properties decide). After the jitter disappears, check the button state again. If the closed state level is still maintained, it is confirmed that there is a button pressed.
-    - When a released button is detected, a delay of 5ms～10ms also should happen to remove the **Back Porch Jitter**, so that the program for the button can be executed.
+  - Задержка 0,01 с для устранения дрожания кнопки. 
+    - Если кнопка находится в закрытом состоянии, будет выполнена задержка для устранения дрожания переднего крыльца. Как правило, задержка составляет от 5 до 10 мс (это зависит от механических свойств). После исчезновения дрожания проверьте состояние кнопки еще раз. Если уровень закрытого состояния все еще сохраняется, это подтверждает нажатие кнопки.
+    - При обнаружении нажатой кнопки также должна произойти задержка в 5-10 мс, чтобы устранить дрожание заднего крыльца, чтобы можно было выполнить программу для кнопки.
 
-- When the button is pressed, **button** equals 1. Press it again, **button** shifts to 0, alternatively. 
+- Когда кнопка нажата, значение **button** равно 1. Нажмите ее еще раз, значение **button** изменится на 0, в качестве альтернативы. 
 
 
 
-Complete code: 
+Полный код: 
 
 ![img](./scratch_img/st44.png)
 
 
 
-###### Test Result
+###### Результат теста
 
-Upload code and open the serial monitor. 
+Загрузите код и откройте последовательный монитор. 
 
-When you press the button once, 1 will be displayed. If you press button for the second time, the value becomes 0. Now, a common button boasts the function of an auto-locking one. 
+При однократном нажатии кнопки на дисплее отобразится значение 1. При повторном нажатии кнопки значение становится равным 0. Теперь обычная кнопка может похвастаться функцией автоматической блокировки. 
 
 ![img](./scratch_img/st46.png)
 
@@ -1788,13 +1788,13 @@ When you press the button once, 1 will be displayed. If you press button for the
 
 
 
-#### Lighting Control
+#### Управление освещением
 
-##### Description
+##### Описание
 
-In above basic experiments, we remould an auto-locking button to control the LED. An auto-locking button is suitable for any situations where a certain state needs to be maintained, for example, when LED needs to light up for a long time, the ESP32 development board is required for some operations.
+В приведенных выше базовых экспериментах мы переделали кнопку автоматической блокировки для управления светодиодом. Кнопка автоматической блокировки подходит для любых ситуаций, когда необходимо поддерживать определенное состояние, например, когда светодиод должен гореть в течение длительного времени, для некоторых операций требуется плата разработки ESP32.
 
-In this experiment, we will adopt Arduino ESP32 board to guide you to implement a lighting system and simulate real-life scenes to control light via the button.
+В этом эксперименте мы используем плату Arduino ESP32, которая поможет вам создать систему освещения и смоделировать реальные сцены для управления светом с помощью кнопки.
 
 
 
@@ -1802,11 +1802,11 @@ In this experiment, we will adopt Arduino ESP32 board to guide you to implement 
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the button to io5 and LED to io27**
+**Подключите кнопку к io5, а светодиод - к io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj13.png)
 
@@ -1816,35 +1816,25 @@ In this experiment, we will adopt Arduino ESP32 board to guide you to implement 
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow: 
+Последовательность выполнения кода: 
 
 ![img](./scratch_img/flo1.png)
 
 
 
-Complete code: 
+Полный код: 
 
-Based on the code for Auto-locking Button, we add "**LED pin output**" blocks.
+На основе кода для кнопки автоматической блокировки мы добавляем блоки "**Вывод светодиодного вывода**".
 
 ![img](./scratch_img/st47.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-**When you press the button once, LED lights up; if you press again, LED turns off. This operation is a loop, which is consistent with the lighting principle in reality.**
-
-
-
-------
-
-
-
-In this chapter, we have demonstrated how to program and control via Scratch, and we have learned the basics as well as some software and hardware concepts in experiments such as auto-locking button and lighting control system.
-
-These are essential for a good Scratch developer. Next, we will guide you to keep exploring more applications and skills, whether you are a beginner or a veteran. Hope you enjoy the fun and challenges during learning Scratch. Let's move on!
+**При однократном нажатии кнопки загорается светодиод; при повторном нажатии светодиод гаснет. Эта операция представляет собой цикл, который в действительности соответствует принципу освещения.**
 
 
 
@@ -1852,34 +1842,44 @@ These are essential for a good Scratch developer. Next, we will guide you to kee
 
 
 
-#### FAQ
+В этой главе мы продемонстрировали, как программировать и управлять с помощью Scratch, и в ходе экспериментов изучили основы, а также некоторые программные и аппаратные концепции, такие как кнопка автоматической блокировки и система управления освещением.
 
-##### Q: LED doesn't light up after uploading code.
+Это важно для хорошего разработчика Scratch. Далее мы поможем вам изучить больше приложений и навыков, независимо от того, новичок вы или опытный пользователь. Надеемся, что вам понравятся занятия и трудности во время изучения Scratch. Давайте двигаться дальше!
 
-A: Please check whether the pin defined in code is consistent with that in your wirings. If they are incompatible, please adjust it referring to the code. 
+
 
 ------
 
-##### Q: The button sometimes works while sometimes doesn't.
 
-A: Please modify the delay of jitter elimination to a proper value. 
 
-```c++
- //Eliminate the button jitter
-   delay(10);  //Modify the delay val in this line
+#### Часто задаваемые вопросы
+
+##### Вопрос: после загрузки кода индикатор не загорается.
+
+О: Пожалуйста, проверьте, соответствует ли pin-код, указанный в коде, pin-коду, указанному в вашей проводке. Если они несовместимы, пожалуйста, измените его в соответствии с кодом. 
+
+------
+
+##### В: Кнопка иногда работает, а иногда нет.
+
+О: Пожалуйста, измените задержку устранения дрожания на правильное значение. 
+
+``c++
+ //Устраните дрожание кнопок
+   задержка(10); //Измените значение задержки в этой строке
 ```
 
 ------
 
-### Project 2: Light Control System
+### Проект 2: Система управления освещением
 
-In this project, we will construct a light control system by a photoresistor and an LED. It is an intelligent system to adjust light, which saves energy and enhance efficiency as well. 
+В этом проекте мы создадим систему управления освещением с помощью фоторезистора и светодиода. Это интеллектуальная система регулировки освещения, которая экономит энергию и повышает эффективность. 
 
 ![img](./scratch_img/cout2.png)
 
-This system is compatible with multiple conditions. Thanks to its photoresistor, it is able to detect the light intensity in day or at night, realizing a more intelligent and energy-saving system. 
+Эта система совместима с различными условиями. Благодаря своему фоторезистору она способна определять интенсивность освещения днем или ночью, что обеспечивает более интеллектуальную и энергосберегающую систему. 
 
-When the photoresistor detects that ambient brightness is lower than the set value, LED lights up. On the contrary, if the ambient light intensity is higher than the set value, photorisistor will send a different signal to turn off the LED.
+Когда фоторезистор обнаруживает, что яркость окружающей среды ниже установленного значения, загорается светодиод. Напротив, если интенсивность окружающего освещения превышает установленное значение, фоторезистор подает другой сигнал для выключения светодиода.
 
 
 
@@ -1887,7 +1887,7 @@ When the photoresistor detects that ambient brightness is lower than the set val
 
 
 
-#### Flow Diagram
+#### Технологическая схема
 
 ![image-20230607175802112](./scratch_img/image-20230607175802112.png)
 
@@ -1897,17 +1897,17 @@ When the photoresistor detects that ambient brightness is lower than the set val
 
 
 
-#### Photoresistor
+#### Фоторезистор
 
-##### Description
+##### Описание
 
-A photoresistor, also called photosensor, converts light signal into electric signal (voltage, current, and resistor). 
+Фоторезистор, также называемый фотосенсором, преобразует световой сигнал в электрический (напряжение, ток и сопротивление). 
 
-**Working principle:**
+** Принцип работы:**
 
-We place a photoresistor in a circuit in series connection and add suitable voltage to both poles. When there is no light, the resistance is infinite and the circuit almost opens. However, when there is light, the resistance decreases while the current increases, and it is equivalent to a short circuit when the light intensity is sufficient.
+Мы включаем фоторезистор в цепь последовательного подключения и подаем соответствующее напряжение на оба полюса. Когда света нет, сопротивление бесконечно, и цепь практически размыкается. Однако при наличии света сопротивление уменьшается, а ток увеличивается, и при достаточной интенсивности света это эквивалентно короткому замыканию.
 
-Now we will read the value of photoresistor by programming on ESP32 development board.
+Теперь мы определим значение фоторезистора, запрограммировав его на плате разработки ESP32.
 
 ![img](./scratch_img/cou2.png)
 
@@ -1915,23 +1915,23 @@ Now we will read the value of photoresistor by programming on ESP32 development 
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
-When light hits the photoresistor, the stronger the light is, the smaller the resistance will be, so the greater the VCC voltage will pass through the resistor.
+Когда свет попадает на фоторезистор, чем сильнее он излучается, тем меньше будет сопротивление, следовательно, тем большее напряжение переменного тока будет проходить через резистор.
 
 ![img](./scratch_img/couy21.png)
 
 
 
-**Parameters:**
+**Параметры:**
 
-- Voltage: 3~5V
+- Напряжение: 3 ~ 5 В
 
-- Current: 0.2mA
-- Power: 1mW
-- Spectrum Peak Value: 540nm
-- Bright Resistance (10lux): 5~10KR
-- Dark Resistance: 0.5MR
+- Ток: 0,2 мА
+- Мощность: 1 МВт
+- Пиковое значение спектра: 540 нм
+- Сопротивление освещению (10 люксов): 5~10 КР
+- Сопротивление затемнению: 0,5 МР
 
 
 
@@ -1939,11 +1939,11 @@ When light hits the photoresistor, the stronger the light is, the smaller the re
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the photoresistor to io34.**
+**Подключите фоторезистор к io34.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj21.png)
 
@@ -1953,22 +1953,22 @@ When light hits the photoresistor, the stronger the light is, the smaller the re
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize the serial port.
+- Инициализируем последовательный порт.
 
   ![img](./scratch_img/st48.png)
 
-- Define a global variable "**item**" as the photoresistor value.
+- Определяем глобальную переменную "**item**" в качестве значения фоторезистора.
 
   ![img](./scratch_img/st49.png)
 
-- Set "**item**" to the read value and print it on serial monitor.
+- Установите для "**item**" значение для считывания и выведите его на последовательный монитор.
 
   ![img](./scratch_img/st50.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st51.png)
 
@@ -1978,11 +1978,11 @@ Complete code:
 
 
 
-##### Test Result
+##### Результат тестирования
 
-Open the serial monitor.
+Откройте последовательный монитор.
 
-The brighter the light detected by the photoresistor is, the greater the value will be. 
+Чем ярче свет, регистрируемый фоторезистором, тем больше будет значение. 
 
 ![img](./scratch_img/st52.png)
 
@@ -1990,13 +1990,13 @@ The brighter the light detected by the photoresistor is, the greater the value w
 
 
 
-#### Light Control System
+#### Система управления освещением
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the photoresistor to io34 and LED to io27.**
+**Подключите фоторезистор к io34, а светодиод к io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj22.png)
 
@@ -2006,29 +2006,29 @@ The brighter the light detected by the photoresistor is, the greater the value w
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow:
+Последовательность выполнения кода:
 
 ![img](./scratch_img/flo2.png)
 
 
 
-- Determine:
+- Определить:
 
-  - The value of the photoresistor >= 800, LED turns off.
-  - The value of the photoresistor =< 800, LED turns on.
+  - Значение фоторезистора >= 800, светодиод гаснет.
+  - Значение фоторезистора =< 800, светодиод включается.
 
   ![img](./scratch_img/st53.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st54.png)
 
-##### Test Result
+##### Результат теста
 
-When the value of the photoresistor is greater than 800 (in daytime), LED goes off. However, if the value is less than 800, LED will automatically light on. 
+Когда значение фоторезистора превышает 800 (в дневное время), светодиод гаснет. Однако, если значение меньше 800, светодиод автоматически загорается. 
 
 ![img](./scratch_img/st55.png)
 
@@ -2036,7 +2036,7 @@ When the value of the photoresistor is greater than 800 (in daytime), LED goes o
 
 
 
-**Various conditions can adopt this type of system. Thanks to its photoresistor, it is able to detect the light intensity in day or at night, which saves energy and intellectualize the whole system. **
+**Этот тип системы может применяться в различных условиях. Благодаря фоторезистору он способен определять интенсивность освещения днем или ночью, что позволяет экономить энергию и интеллектуализировать всю систему. **
 
 
 
@@ -2044,29 +2044,30 @@ When the value of the photoresistor is greater than 800 (in daytime), LED goes o
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: The value of the photoresistor cannot be 0.
+##### Вопрос: Значение фоторезистора не может быть равным 0.
 
-A: In actual life, little light exists although you turn off all lights in your room, so the value of photoresistor only approaches to 0 rather than equals to 0. 
+О: В реальной жизни, несмотря на то, что вы выключаете весь свет в своей комнате, света мало, поэтому значение фоторезистора приближается к 0, а не равно ему. 
 
 ------
 
-##### Q: After uploading code, LED doesn't light up even though the room is dark without lights.
+##### Вопрос: После загрузки кода светодиод не загорается, даже если в комнате темно без освещения.
 
-A: Increase the determined value of photoresistor. In our example, we set to 800. So you may adjust it to 1000 or a greater value.
+О: Увеличьте установленное значение фоторезистора. В нашем примере мы установили значение 800. Таким образом, вы можете настроить его на 1000 или большее значение.
 
 ![img](./scratch_img/st53.png)
 
 ------
 
-### Project 3: Alarm System
+
+### Проект 3: Система сигнализации
 
 
 
-In this project, we use a PIR motion sensor and a buzzer to consist an alarm system, which can be controlled by ESP32 development board. 
+В этом проекте мы используем датчик движения PIR и звуковой сигнал для создания системы сигнализации, которой можно управлять с помощью платы разработки ESP32. 
 
-How does it work? The electric signals are detected and read by the PIR motion sensor through programming on Arduino IDE, and then it determines whether there is a person. If there is, the buzzer alarms. In this way, this alarm system costs much lower for families and offices. 
+Как это работает? Электрические сигналы обнаруживаются и считываются датчиком движения PIR с помощью программирования в Arduino IDE, а затем он определяет, есть ли там человек. Если есть, то подается звуковой сигнал. Таким образом, стоимость этой системы сигнализации для семей и офисов намного ниже. 
 
 
 
@@ -2074,7 +2075,7 @@ How does it work? The electric signals are detected and read by the PIR motion s
 
 
 
-#### Flow Diagram
+#### Блок-схема
 
 ![image-20230606102303743](./scratch_img/image-20230606102303743.png)
 
@@ -2082,13 +2083,13 @@ How does it work? The electric signals are detected and read by the PIR motion s
 
 
 
-#### PIR Motion Sensor
+#### Датчик движения PIR
 
-##### Description
+##### Описание
 
-A PIR motion sensor detects the presence of a person by sensing the heat given off by the human body. 
+Датчик движения PIR определяет присутствие человека, ощущая тепло, выделяемое человеческим телом. 
 
-Moreover, this sensor is small and easy to use.
+Кроме того, этот датчик имеет небольшие размеры и прост в использовании.
 
 ![img](./scratch_img/cou32.png)
 
@@ -2096,19 +2097,19 @@ Moreover, this sensor is small and easy to use.
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
 ![img](./scratch_img/couy31.png)
 
 
 
-**Parameters:**
+**Параметры:**
 
-- Voltage: 3~5V
-- Current: 3.6mA
-- Power: 18mW
-- Angle of View: Y = 90°, X = 110° (theoretical value)
-- Detection Distance: ≤5m
+- Напряжение: 3 ~ 5 В
+- Ток: 3,6 мА
+- Мощность: 18 МВт
+- Угол обзора: Y = 90°, X = 110° (теоретическое значение)
+- Расстояние обнаружения: ≤5 м
 
 
 
@@ -2116,11 +2117,11 @@ Moreover, this sensor is small and easy to use.
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the PIR motion sensor to io23.**
+**Подключите датчик движения PIR к io23.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj31.png)
 
@@ -2130,21 +2131,21 @@ Moreover, this sensor is small and easy to use.
 
 
 
-##### Test Code
+##### Тестовый код
 
-Read the value at pin IO23 to determine whether there is a human motion.
+Считайте значение на выводе IO23, чтобы определить, есть ли движение человека.
 
 ![img](./scratch_img/st56.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-Open the serial monotor.
+Откройте последовательный модуль.
 
-When someone is in the area, **Someone** is displayed on the monitor, and the red LED on the sensor goes off. However, if there is no one, **No one** will be printed and the LED will always be on.
+Когда кто-то находится поблизости, на мониторе отображается сообщение "Кто-то", и красный светодиод на датчике гаснет. Однако, если никого нет, ** Никто ** не будет напечатан, и светодиод будет гореть всегда.
 
-**ATTENTION**: PIR motion sensor is not able to penetrate things, so please do not cover the sensor while detecting motions.
+**ВНИМАНИЕ**: Датчик движения PIR не способен проникать сквозь предметы, поэтому, пожалуйста, не закрывайте датчик при обнаружении движения.
 
 ![img](./scratch_img/st57.png)
 
@@ -2154,11 +2155,11 @@ When someone is in the area, **Someone** is displayed on the monitor, and the re
 
 
 
-#### Buzzer
+#### Звуковой сигнал
 
-##### Description
+##### Описание
 
-A buzzer is an electronic sounder, which emits sounds with different frequencies and durations and is powered by DC voltage. Thus, it can be used as a reminder or an alarm in considerable electronic devices, such as computers, printers, copiers, alarms, electronic toys, automotive electronics, telephones and timers.
+Зуммер - это электронный эхолот, который издает звуки различной частоты и длительности и питается от постоянного напряжения. Таким образом, его можно использовать в качестве напоминания или сигнала тревоги во многих электронных устройствах, таких как компьютеры, принтеры, копировальные аппараты, сигнализаторы, электронные игрушки, автомобильная электроника, телефоны и таймеры.
 
 ![img](./scratch_img/cou34.png)
 
@@ -2166,35 +2167,35 @@ A buzzer is an electronic sounder, which emits sounds with different frequencies
 
 
 
-A buzzer consists of **vibration device** and **resonance device**. And there are two categories: Passive buzzers and active buzzers. 
+Зуммер состоит из ** вибрационного устройства ** и ** резонансного устройства **. Существует две категории зуммеров: пассивные и активные. 
 
-- A **Passive Buzzer** cannot `vibrate` to emit sound itself, unless putting a `square wave` signal with a certain frequency. Moreover, the emitting sound varies due to the different frequency of square wave, so a passive buzzer can simulate tunes.
-  - An analog squire wave can be generated by changing the power level at pins. For example, after the high level lasting for 500ms, it shifts to a low level for another 500ms then to a high level again...
-  - **We drive the buzzer via a squire wave within 200~5000Hz, and we can compute the frequency(f): *f=1/T*; T is the period (the total time of high and low level). **
+- Пассивный зуммер не может "вибрировать", издавая звук сам по себе, если не подать сигнал прямоугольной формы с определенной частотой. Кроме того, звук, издаваемый им, меняется из-за разной частоты прямоугольной формы, поэтому пассивный зуммер может имитировать мелодии.
+  - Аналоговый сигнал squire можно генерировать, изменяя уровень мощности на выводах. Например, после того, как высокий уровень сохраняется в течение 500 мс, он переходит на низкий уровень еще на 500 мс, а затем снова на высокий уровень...
+  - ** Мы запускаем зуммер с помощью частотной волны в диапазоне 200 ~ 5000 Гц, и мы можем вычислить частоту (f): *f=1/T*; T - это период (общее время высокого и низкого уровня). **
 
 ![img](./scratch_img/cou35.png)
 
-- An **Active Buzzer** is able to emit sound automatically without an external motivator, because it includes a driving circuit which only needs `DC power supply`.  However, its sound is flat with relatively fixed frequency.
+- Активный звуковой сигнал способен издавать звук автоматически, без внешнего побудителя, поскольку он включает в себя схему возбуждения, для которой требуется только "Источник постоянного тока`.  Однако его звук ровный, с относительно постоянной частотой.
 
 
 
 ------
 
-**In this experiment, a passive buzzer is applied to" play music".**
+**В этом эксперименте для "воспроизведения музыки" использовался пассивный звуковой сигнал.**
 
 ------
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
 ![img](./scratch_img/cou38.png)
 
-**Parameters:**
+**Параметры:**
 
-- Voltage: 3~5V
-- Current: ≤5mA
-- Power: ≤25mW
+- Напряжение: 3 ~ 5 В
+- Ток: ≤5 мА
+- Мощность: ≤25 МВт
 
 
 
@@ -2202,11 +2203,11 @@ A buzzer consists of **vibration device** and **resonance device**. And there ar
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the buzzer to io16.**
+**Подключите зуммер к io16.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj32.png)
 
@@ -2216,31 +2217,31 @@ A buzzer consists of **vibration device** and **resonance device**. And there ar
 
 
 
-##### Test Code
+##### Тестовый код
 
-###### Method 1: Analog Squire Wave
+###### Способ 1: Аналоговая сигнальная волна
 
-A passive buzzer is driven by squire waves, so we stimulate the wave.
+Пассивный звуковой сигнал генерируется сигнальными волнами, поэтому мы стимулируем волну.
 
-An analog squire wave can be generated by changing the power level of pin: high level for 500us and low level for 500us. So, the buzzer will emit sound. Also, the durations can adjust the sound volume. 
+Аналоговую сигнальную волну можно создать, изменив уровень мощности на выводе: высокий уровень на 500 мкс и низкий уровень на 500 мкс. При этом будет издаваться звуковой сигнал. Кроме того, с помощью длительности можно регулировать громкость звука. 
 
-Please try 1000us, 1500us, 3000us…What's the difference?
+Пожалуйста, попробуйте 1000, 1500, 3000... В чем разница?
 
 ![img](./scratch_img/cou36.png)
 
-Code:
+Код:
 
 ![img](./scratch_img/st58.png)
 
-- In delay function, the time unit us micro-seconds. So the following block represents a 500ms delay.
+- В функции delay единица измерения времени - микросекунды. Таким образом, следующий блок представляет задержку в 500 мс.
 
 ![img](./scratch_img/st59.png)
 
-According to formula:
+В соответствии с формулой:
 $$
 f=1/T
 $$
-Thus, 500us is the duration, and we can calculate the frequency = 2kHz, i.e., the high and low level alter 2000 times per second.
+Таким образом, длительность составляет 500 мкс, и мы можем рассчитать частоту, равную 2 кГц, т.е. высокий и низкий уровень меняются 2000 раз в секунду.
 
 
 
@@ -2248,48 +2249,48 @@ Thus, 500us is the duration, and we can calculate the frequency = 2kHz, i.e., th
 
 
 
-###### Method 2: Speaker Blocks
+###### Способ 2: Блоки динамиков
 
-We adopt Speaker![img](./scratch_img/st60.png) code blocks to drive the buzzer to vibrate.
+Мы используем динамик![img](./scratch_img/st60.png) кодовые блоки, вызывающие вибрацию зуммера.
 
-**Speaker Blocks generates PWM signal with a certain frequency to drive the buzzer to vibrate,** and the duration and tone is controlled by related parameters.
+**Блоки динамиков генерируют ШИМ-сигнал определенной частоты, который заставляет зуммер вибрировать,** а длительность и тональный сигнал регулируются соответствующими параметрами.
 
-There are two ways to define the duration. One is to adjust the parameters of the tone() function to set a duration, and the other is to adopt a noTone() function to directly stop the sound. If you do not define a duration in tone(), the sound signal will always be generated unless a noTone() stops it.
+Существует два способа определения длительности. Один из них заключается в настройке параметров функции tone() для установки длительности, а другой - в использовании функции noTone() для прямой остановки звука. Если вы не зададите длительность в tone(), звуковой сигнал будет генерироваться всегда, пока функция noTone() не остановит его.
 
-For ESP32 board, one sound can only be produced at a time. If one pin of ESP32 is generating a sound signal via tone(), it is not acceptable to emit sound by this function on another pin.
+На плате ESP32 одновременно может воспроизводиться только один звуковой сигнал. Если один вывод ESP32 генерирует звуковой сигнал с помощью тонального сигнала(), запрещается воспроизводить звук с помощью этой функции на другом выводе.
 
 
 
-**Tone Table**
+**Таблица звуковых сигналов**
 
 ![img](./scratch_img/cou37.png)
 
 
 
-Code:
+Код:
 
-- Drag a "**Tone**" block from ![img](./scratch_img/st60.png) as shown below, and set pin to IO16.
+- Перетащите блок "**Тон**" из ![img](./scratch_img/st60.png), как показано ниже, и установите pin-код на IO16.
 
-  ![img](./scratch_img/st61.png)
+  ![img](./scratch_img/st61.png).
 
-- You may select a frequency at will.
+- Вы можете выбрать частоту по своему усмотрению.
 
   ![img](./scratch_img/st62.png)
 
-- No Tone: It is used to turn off all tones. 
+- Нет звукового сигнала: используется для отключения всех звуковых сигналов. 
 
   ![img](./scratch_img/st65.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st63.png)
 
-##### Test Result
+##### Результат проверки
 
-Method 1: Buzzer keeps emitting sound. 
+Метод 1: Звуковой сигнал продолжает звучать. 
 
-Method 2: Buzzer alarms via tone() function.
+Метод 2: Звуковой сигнал подается с помощью функции тонального сигнала().
 
 
 
@@ -2297,11 +2298,11 @@ Method 2: Buzzer alarms via tone() function.
 
 
 
-##### Expansion: Play Music
+##### Расширение: Воспроизведение музыки
 
-Play music through tone(). 
+Воспроизведение музыки с помощью тонального сигнала(). 
 
-Complete Code:
+Полный код:
 
 ![img](./scratch_img/st64.png)
 
@@ -2311,9 +2312,9 @@ Complete Code:
 
 
 
-#### Alarm System
+#### Система сигнализации
 
-In this experiment, we will construct an alarm system by a PIR motion sensor, a buzzer and an LED. When the sensor detects a motion, buzzer emits sound and LED blinks to remind of an invasion.
+В этом эксперименте мы создадим систему сигнализации с помощью датчика движения PIR, звукового сигнала и светодиода. Когда датчик обнаруживает движение, раздается звуковой сигнал, а светодиод мигает, напоминая о вторжении.
 
 
 
@@ -2321,11 +2322,11 @@ In this experiment, we will construct an alarm system by a PIR motion sensor, a 
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the PIR motionsensor to io23, buzzer to io16, and LED to io27.**
+**Подключите датчик движения PIR к io23, звуковой сигнал - к io16, а светодиод - к io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj33.png)
 
@@ -2335,23 +2336,23 @@ In this experiment, we will construct an alarm system by a PIR motion sensor, a 
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code flow:
+Последовательность выполнения кода:
 
 ![img](./scratch_img/flo3.png)
 
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st66.png)
 
 
 
-##### Test Result
+##### Результат проверки
 
-Upload the code and the alarm system starts to work. When it detects a motion, buzzer alarms and LED blinks. 
+Введите код, и система сигнализации начнет работать. При обнаружении движения включается звуковой сигнал и мигает светодиод. 
 
 
 
@@ -2359,35 +2360,35 @@ Upload the code and the alarm system starts to work. When it detects a motion, b
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: Tones of buzzer is not accurate with actual ones.
+##### Вопрос: Звуковые сигналы не совпадают с фактическими.
 
-A: This regular buzzer just stimulates tones, so it is not able to meet professional requirements. If you want standard tones, a more specialized speaker is required. 
-
-------
-
-##### Q: The PIR motion sensor misinforms results.
-
-A: This PIR motion sensor is also not a professional one. 
-
-Please guarantee the following situations to avoid a misinformation: 
-
-- Avoid objects blown by wind to flutter within the detection area, such as curtains, clothing and flowers.
-- Avoid strong light in the detection area, such as sunlight, car lights, spotlights and other light sources.
-- And so on...
+О: Этот обычный звуковой сигнал просто генерирует звуковые сигналы, поэтому он не соответствует профессиональным требованиям. Если вам нужны стандартные звуковые сигналы, требуется более специализированный динамик. 
 
 ------
 
-### Project 4: Rain Detection System
+##### Вопрос: Датчик движения PIR неправильно отображает результаты.
 
-***NOTE: Sprinkling water on sensors(except steam sensor) may cause a short circuit or modules to be out of work. If batteries get wet, even explosion may occur. Do be extra careful! For younger users, please operate with your parents. To guarantee security, please obey guidances and safety regulations.***
+О: Этот датчик движения PIR также не является профессиональным. 
+
+Пожалуйста, обратите внимание на следующие ситуации, чтобы избежать неверной информации: 
+
+- Не допускайте, чтобы в зоне обнаружения трепетали предметы, переносимые ветром, такие как занавески, одежда и цветы.
+- Избегайте попадания в зону обнаружения яркого света, такого как солнечный свет, автомобильные фары, прожекторы и другие источники света.
+- И так далее...
 
 ------
 
-In this project, we will create a rain detection system by a steam sensor. When rain is detected, ESP32 triggers various actions like sending message, activating sprinklers and turning on lights. Through this system, rainfall amount can be monitored, and water leakage can also be detected on roofs or in buildings. 
+### Проект 4: Система обнаружения дождя
 
-Besides, it is easy to connect the steam sensor to ESP32 board, which forms a simple but effective rain detection system.
+***ПРИМЕЧАНИЕ: Попадание воды на датчики (за исключением датчика пара) может привести к короткому замыканию или выходу из строя модулей. Если батареи намокнут, может произойти даже взрыв. Будьте особенно осторожны! Для маленьких пользователей, пожалуйста, работайте с родителями. Чтобы гарантировать безопасность, пожалуйста, соблюдайте инструкции и правила техники безопасности.***
+
+------
+
+В этом проекте мы создадим систему обнаружения дождя с помощью датчика пара. При обнаружении дождя ESP32 запускает различные действия, такие как отправка сообщения, активация разбрызгивателей и включение освещения. С помощью этой системы можно отслеживать количество осадков, а также обнаруживать утечки воды на крышах или в зданиях. 
+
+Кроме того, датчик пара легко подключить к плате ESP32, которая образует простую, но эффективную систему обнаружения дождя.
 
 ![img](./scratch_img/cout4.png)
 
@@ -2397,7 +2398,7 @@ Besides, it is easy to connect the steam sensor to ESP32 board, which forms a si
 
 
 
-#### Flow Diagram
+#### Блок-схема
 
 ![image-20230607180917475](./scratch_img/image-20230607180917475.png)
 
@@ -2407,11 +2408,11 @@ Besides, it is easy to connect the steam sensor to ESP32 board, which forms a si
 
 
 
-#### Steam Sensor
+#### Датчик пара
 
-##### Description
+##### Описание
 
-Steam sensor detects the presence of water, so it is usually used in rain detection. If the rain hits the conductive pad on the sensor, it will send a signal to the Arduino board.
+Датчик пара определяет наличие воды, поэтому его обычно используют для обнаружения дождя. Если капли дождя попадут на токопроводящую прокладку датчика, он отправит сигнал на плату Arduino.
 
 ![img](./scratch_img/cou41.png)
 
@@ -2419,17 +2420,17 @@ Steam sensor detects the presence of water, so it is usually used in rain detect
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
-![img](./scratch_img/couy41.png)
+![img](./scratch_img/cou41.png)
 
 
 
-**Parameters:**
+**Параметры:**
 
-- Voltage: 3~5V
-- Current: 1.5mA
-- Power: 7.5mW
+- Напряжение: 3~5 В
+- Ток: 1,5 мА
+- Мощность: 7,5 МВт
 
 
 
@@ -2437,11 +2438,11 @@ Steam sensor detects the presence of water, so it is usually used in rain detect
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the steam sensor to io35.**
+**Подключите датчик пара к io35.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj41.png)
 
@@ -2451,18 +2452,18 @@ Steam sensor detects the presence of water, so it is usually used in rain detect
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize the serial port.
+- Инициализируем последовательный порт.
 
   ![img](./scratch_img/st67.png)
 
-- Read the sensor value at pin io35 and print it per second. 
+- Считываем значение датчика на выводе io35 и выводим его в секунду. 
 
   ![img](./scratch_img/st68.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st69.png)
 
@@ -2470,27 +2471,25 @@ Complete code:
 
 
 
-##### Test Result
+##### Результат теста
 
-Touch the detection area with a wet finger. The larger the area you touched is, the larger the value will be. 
+Прикоснитесь к области обнаружения влажным пальцем. Чем больше область, к которой вы прикоснулись, тем больше будет значение. 
 
-You may open the serial monitor to observe the currently detected value (range: 0~4095).
+Вы можете открыть последовательный монитор, чтобы просмотреть текущее значение (диапазон: 0~4095).
 
-![img](./scratch_img/st70.png)
+![img](./scratch_img/st70.png).
 
 
 
 ------
 
+#### Система обнаружения дождя
 
+##### Описание
 
-#### Rain Detection System
+Когда датчик пара обнаруживает дождь, он посылает сигнал на панель управления для запуска различных действий, например, звукового сигнала, напоминающего о том, что идет дождь. Это особенно полезно для садоводства и фермерства на открытом воздухе, позволяя пользователям принимать необходимые меры предосторожности, чтобы избежать чрезмерного полива.
 
-##### Description
-
-When the steam sensor detects rain, it sends a signal to the board to trigger various actions, for instance, the buzzer alarms to remind that it is raining. This is especially useful for outdoor gardening and farming, enabling users to take necessary precautions to avoid over-watering.
-
-Additionally, this system can be used to detect water leakage to prevent damage from water intrusion. Overall, the steam sensor is versatile and effective in various applications.
+Кроме того, эта система может использоваться для обнаружения утечки воды, чтобы предотвратить повреждение от проникновения воды. В целом, датчик пара универсален и эффективен в различных областях применения.
 
 
 
@@ -2498,11 +2497,11 @@ Additionally, this system can be used to detect water leakage to prevent damage 
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the steam sensor to io35 and buzzer to io16.**
+**Подключите датчик подачи пара к io35, а звуковой сигнал - к io16.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj42.png)
 
@@ -2512,50 +2511,50 @@ Additionally, this system can be used to detect water leakage to prevent damage 
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code flow:
+Последовательность выполнения кода:
 
 ![img](./scratch_img/flo4.png)
 
 
 
-Code:
+Код:
 
-- Initialize the serial port, and define a variable **item** as the received sensor value.
+- Инициализируйте последовательный порт и определите переменную **item** в качестве полученного значения датчика.
 
   ![img](./scratch_img/st71.png)
 
-- Receive the sensor value and print it on the serial monitor.
+- Получите значение датчика и распечатайте его на последовательном мониторе.
 
   ![img](./scratch_img/st72.png)
 
-- The received value detected by the sensor is within 800 ~ 1999:
+- Полученное значение, обнаруженное датчиком, находится в пределах 800 ~ 1999:
 
   ![img](./scratch_img/st73.png)
 
-- The received value detected by the sensor is within 2000 ~ 2999:
+- Полученное значение, обнаруженное датчиком, находится в пределах 2000 ~ 2999:
 
   ![img](./scratch_img/st74.png)
 
-- The received value detected by the sensor is greater than 3000:
+- Полученное значение, обнаруженное датчиком, превышает 3000:
 
   ![img](./scratch_img/st75.png)
 
-- At the end of code blocks, add a "**No Tone**" to turn off the buzzer.
+- В конце блоков кода добавьте "**Без звукового сигнала**", чтобы отключить звуковой сигнал.
 
   ![img](./scratch_img/st76.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st77.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-The greater the detected value is, the loader the sound emitted by the buzzer will be. 
+Чем больше обнаруженное значение, тем громче будет звуковой сигнал. 
 
 
 
@@ -2563,29 +2562,29 @@ The greater the detected value is, the loader the sound emitted by the buzzer wi
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: Is the steam sensor waterproof?
+##### Вопрос: Является ли датчик пара водонепроницаемым?
 
-A: The detection area can be exposed to water, but the wire junctions are not waterproof. During the experiment, please pay attention to the amount of water not to be too much to prevent short circuit.
-
-------
-
-##### Q: Although a long time has elapsed since the sensor detected water, the buzzer keeps buzzing.
-
-A: It keeps buzzing because there are still blots of water in the detection area. Please just clean it up.
+О: На зону обнаружения может попасть вода, но места соединения проводов не являются водонепроницаемыми. Во время эксперимента, пожалуйста, следите за тем, чтобы количество воды не было слишком большим для предотвращения короткого замыкания.
 
 ------
 
-### Project 5: Solar Power System
+##### В: Несмотря на то, что с момента обнаружения воды датчиком прошло много времени, звуковой сигнал продолжает звучать.
+
+О: Он продолжает звучать, потому что в зоне обнаружения все еще есть капли воды. Пожалуйста, просто очистите ее.
+
+------
+
+### Проект 5: Солнечная энергетическая система
 
 ![img](./scratch_img/cou51.png)
 
 
 
-#### Description
+#### Описание
 
-Solar panel converts solar power into electricity for the LED. It is suitable for multiple applications, such as outdoor lighting, mobile devices charging, and back up power. Hence, you may establish a sophisticated and efficient solar power system according to your own needs.
+Солнечная панель преобразует солнечную энергию в электричество для светодиодов. Она подходит для различных применений, таких как наружное освещение, зарядка мобильных устройств и резервное питание. Таким образом, вы можете создать сложную и эффективную солнечную энергетическую систему в соответствии со своими потребностями.
 
 
 
@@ -2593,13 +2592,13 @@ Solar panel converts solar power into electricity for the LED. It is suitable fo
 
 
 
-#### Working Principle
+#### Принцип работы
 
-**How does solar panel convert solar power into electricity?**
+**Как солнечная панель преобразует солнечную энергию в электричество?**
 
 ![img](./scratch_img/cou52.png)
 
-The solar panel absorbs light and directly or indirectly converts solar radiation into electricity. Compared with ordinary coal power generation, solar, wind and water power are more energy-saving and environment-friendly.
+Солнечная панель поглощает свет и прямо или косвенно преобразует солнечное излучение в электричество. По сравнению с обычной угольной электростанцией, солнечная энергия, энергия ветра и энергия воды являются более энергосберегающими и экологичными.
 
 
 
@@ -2607,19 +2606,19 @@ The solar panel absorbs light and directly or indirectly converts solar radiatio
 
 
 
-**How does light convert to electricity?**
+** Как свет преобразуется в электричество?**
 
-Next, let's talk about the conversion process from inside to outside in a solar panel .
+Далее, давайте поговорим о процессе преобразования энергии внутри солнечной панели во внешнюю.
 
 
 
-**The Sun emits energy in waves with a wide range of wavelengths, from ultraviolet to visible to infrared light.**
+** Солнце излучает энергию в виде волн с широким диапазоном длин волн, от ультрафиолетового до видимого и инфракрасного света.**
 
-- Wavelength of Ultraviolet: 150~400nm;
-- Wavelength of Visible Light: 400~760nm;
-- Wavelength of Infrared Light: 760~4000nm;
+- Длина волны ультрафиолета: 150 ~ 400 нм;
+- Длина волны видимого света: 400~760 нм;
+- Длина волны инфракрасного излучения: 760~ 4000 нм;
 
-***The panel absorbs one of these ranges of wavelength and converts them into electricity. But how? Let's move on.***
+*** Панель поглощает один из этих диапазонов длин волн и преобразует их в электричество. Но как? Давайте двигаться дальше.***
 
 
 
@@ -2627,11 +2626,11 @@ Next, let's talk about the conversion process from inside to outside in a solar 
 
 
 
-**The active part of most solar panel cell is made of a semiconductor --- silicon(Si).**
+**Активная часть большинства элементов солнечных панелей изготовлена из полупроводника - кремния (Si).**
 
 ![img](./scratch_img/cou53.png)
 
-The conductivity of a semiconductor is between a conductor and an insulator in atmospheric temperature. Generally, it cannot conduct well, yet its conductivity improves in certain conditions.
+При атмосферной температуре проводимость полупроводника находится между проводником и изолятором. Как правило, он плохо проводит ток, но при определенных условиях его проводимость улучшается.
 
 
 
@@ -2641,47 +2640,47 @@ The conductivity of a semiconductor is between a conductor and an insulator in a
 
 ![img](./scratch_img/cou54.png)
 
-**The diagram above shows the internal structure of the semiconductor in solar cell, which is divided into three layers:**
+**На схеме выше показана внутренняя структура полупроводника в солнечном элементе, который разделен на три слоя:**
 
-1. **The top layer (red part)** consists of Silicon(Si) and a little Phosphorus(P). The later carries more electrons than the former, providing sufficient electrons for the top layer. Due to these freely-moving electrons, this layer is conductive, so it is called **Negative or N-type.** 
-2. **The middle layer (gray part)** contains too few electrons to conduct. 
-3. **The bottom layer (green part)** mainly includes Silicon(Si) and Boron(B). The later carries less electrons than the former, so that a rarely few electrons move freely, causing the missing of electrons which are described as effective positive charge. Therefore, this layer is named **Positive or P-type.** 
+1. **Верхний слой (красная часть)** состоит из кремния (Si) и небольшого количества фосфора (P). Последний несет больше электронов, чем первый, обеспечивая достаточное количество электронов для верхнего слоя. Благодаря свободному перемещению электронов этот слой является проводящим, поэтому его называют отрицательным или N-типа.** 
+2. ** Средний слой (серая часть) ** содержит слишком мало электронов для проведения тока. 
+3. ** Нижний слой (зеленая часть) ** в основном состоит из кремния (Si) и бора (B). Последний несет меньше электронов, чем первый, так что лишь немногие электроны перемещаются свободно, что приводит к отсутствию электронов, которые описываются как эффективный положительный заряд. Поэтому этот слой называется **Положительным или P-типа.** 
 
 ![img](./scratch_img/cou55.png)
 
 
 
-**Usually, only the middle layer of the solar panel absorbs light waves with wavelength of 350~1140nm.** According to the spectrum distribution in previous paragraphs, absorptions are long wave ultraviolet, short wave infrared and visible light.
+** Обычно только средний слой солнечной панели поглощает световые волны с длиной волны 350 ~ 1140 нм.** Согласно распределению спектра, приведенному в предыдущих параграфах, поглощаются длинноволновый ультрафиолетовый, коротковолновый инфракрасный и видимый свет.
 
 
 
-**The wavelength of ultraviolet is so short that they stops on the surface.**
+** Длина волны ультрафиолета настолько мала, что он не попадает на поверхность.**
 
 ![img](./scratch_img/cou56.png)
 
 
 
-**The wavelength of infrared light is too long too be absorbed by the panel, so they usually passes through or is reflected back.** 
+**Длина волны инфракрасного излучения слишком велика для поглощения панелью, поэтому оно обычно проходит сквозь нее или отражается обратно.** 
 
 ![img](./scratch_img/cou57.png)
 
 
 
-The middle layer absorbs light and knocks electrons off from silicon in the top layer, leaving them in a free state, and empty electron holes are generated at the place where they were before. 
+Средний слой поглощает свет и выбивает электроны из кремния в верхнем слое, оставляя их в свободном состоянии, а на том месте, где они были раньше, образуются пустые электронные дырки. 
 
 ![img](./scratch_img/cou58.gif)
 
-The holes carries a positive charge. Meanwhile, free electrons move upwards to reach N-type layer, while holes move downwards to reach P-type layer.
+Дырки несут положительный заряд. Тем временем свободные электроны движутся вверх, достигая слоя N-типа, в то время как дырки движутся вниз, достигая слоя P-типа.
 
 
 
-**In conclusion, electrons in the top and bottom layers are struck out after the middle layer absorbing solar energy. Therefore, N-type layer carries negative charge as a negative pole, while P-type layer is positively charged as a positive pole. In this case, as long as the two layers are connected, it conducts.** 
+** В заключение, электроны в верхнем и нижнем слоях выбрасываются после того, как средний слой поглощает солнечную энергию. Таким образом, слой N-типа несет отрицательный заряд как отрицательный полюс, в то время как слой P-типа заряжен положительно как положительный полюс. В этом случае, пока два слоя соединены, он проводит ток.** 
 
 
 
 ------
 
-If sunlight shines on the solar panel, the above situation will last, and a large number of free electrons and holes will be produced. As our conclusion goes, electrons move upwards while holes move downwards, which forms the two poles and generates current.
+Если солнечный свет попадает на солнечную панель, описанная выше ситуация сохраняется, и образуется большое количество свободных электронов и дырок. Как следует из нашего вывода, электроны движутся вверх, а дырки - вниз, что образует два полюса и генерирует ток.
 
 ![img](./scratch_img/cou59.gif)
 
@@ -2695,26 +2694,13 @@ If sunlight shines on the solar panel, the above situation will last, and a larg
 
 
 
-Solar energy is an alternative energy source, which features sustainability and cost-effectiveness.
+Солнечная энергия - это альтернативный источник энергии, который отличается экологичностью и экономичностью.
 
-However, the electricity generated by one solar panel can be converted into several watts of power, which is enough for a calculator or a cellphone charger, yet not nearly enough to run a one-kilowatt toaster.
+Однако электроэнергия, вырабатываемая одной солнечной панелью, может быть преобразована в несколько ватт энергии, которых достаточно для работы калькулятора или зарядного устройства для мобильного телефона, но недостаточно для работы тостера мощностью в один киловатт.
 
-Solar power systems satisfy the needs of different users and benefit for environment as well. Combined with Arduino programming, this kind of system builds a variety of useful and efficient solar applications, like automatic lighting, chargers and smart homes.
+Системы солнечной энергетики удовлетворяют потребности различных пользователей и приносят пользу окружающей среде. В сочетании с программированием на Arduino такая система позволяет создавать множество полезных и эффективных приложений для использования солнечной энергии, таких как автоматическое освещение, зарядные устройства и "умные дома".
 
-Generally speaking, solar energy promises well for a wonderful and sustainable future.
-
-
-
-------
-
-
-
-#### Parameters
-
-- Voltage: 5V
-- Current: 80mA
-- Power: 400mW
-- Dimensions: 60*60mm
+В целом, солнечная энергетика обещает прекрасное и устойчивое будущее.
 
 
 
@@ -2722,11 +2708,12 @@ Generally speaking, solar energy promises well for a wonderful and sustainable f
 
 
 
-#### Test Result
+#### Параметры
 
-Codes are not required in this project. Importantly, we learn about the new environmental energy --- solar power. 
-
-When good illumination is provided, LED will light up in yellow. The brighter the light is, the brighter the LED will be.
+- Напряжение: 5 В
+- Ток: 80 мА
+- Мощность: 400 МВт
+- Размеры: 60 * 60 мм
 
 
 
@@ -2734,23 +2721,35 @@ When good illumination is provided, LED will light up in yellow. The brighter th
 
 
 
-#### FAQ
+#### Результат теста
 
-##### Q: Why does solar panel still work without sunlight?
+В этом проекте коды не требуются. Важно то, что мы узнаем о новой экологической энергии - солнечной энергии. 
 
-A: It works with not only sunlight but also ambient light. The brighter the light is, the greater the voltage will be, and the lighter the LED will be.
+При хорошем освещении светодиод загорается желтым цветом. Чем ярче освещение, тем ярче будет гореть светодиод.
+
+
 
 ------
 
 
 
-### Project 6: Smart Feeding System
+#### Часто задаваемые вопросы
+
+##### Вопрос: Почему солнечная панель все еще работает без солнечного света?
+
+О: Она работает не только при солнечном, но и при окружающем освещении. Чем ярче свет, тем больше будет напряжение и тем светлее будет светодиод.
+
+------
 
 
 
-In this project, the ultrasonic module detects whether animals are in the feeding area, and the Servo automatically opens the feeding box for fowls. Besides, incorporating IOT enables remote monitoring of such feeding systems which provides much convenience. 
+### Проект 6: Интеллектуальная система кормления
 
-Overall, the automation and remote operation are optimizing the feeding process for this system.
+
+
+В этом проекте ультразвуковой модуль определяет, находятся ли животные в зоне кормления, и сервопривод автоматически открывает кормушку для домашней птицы. Кроме того, внедрение Интернета вещей позволяет осуществлять дистанционный мониторинг таких систем кормления, что обеспечивает большое удобство. 
+
+В целом, автоматизация и дистанционное управление оптимизируют процесс подачи в этой системе.
 
 ![img](./scratch_img/cout6.png)
 
@@ -2760,7 +2759,7 @@ Overall, the automation and remote operation are optimizing the feeding process 
 
 
 
-#### Flow Diagram
+#### Технологическая схема
 
 ![image-20230607085516167](./scratch_img/image-20230607085516167.png)
 
@@ -2770,11 +2769,11 @@ Overall, the automation and remote operation are optimizing the feeding process 
 
 
 
-#### Servo
+#### Сервопривод
 
-#### Description
+#### Описание
 
-**Servo**, also called **RC Servo Device**, is a motor with a feedback. Commonly, Servo performs precise position control and outputs high torque, which most often appears in robotics projects, RC cars, airplanes and aircraft.
+** Сервопривод**, также называемый ** Радиоуправляемым сервоприводом**, представляет собой двигатель с обратной связью. Как правило, сервопривод выполняет точное управление положением и выдает высокий крутящий момент, что чаще всего используется в робототехнических проектах, радиоуправляемых автомобилях, самолетах и т.д.
 
 ![img](./scratch_img/cou64.png)
 
@@ -2784,15 +2783,15 @@ Overall, the automation and remote operation are optimizing the feeding process 
 
 
 
-**Internal Structure:**
+**Внутренняя структура:**
 
 ![img](./scratch_img/cou61.png)
 
-- ① Signal(S): It receives the control signal from microcontroller. 
-- ② Potentiometer: the feedback part of the Servo. It measures the position of output shaft.
-- ③ Embedded board (Internal controller): the core of the Servo. It processes external control signal and the feedback signal of position and drives the Servo. 
-- ④ DC motor: the execution part. It outputs speed, torque and position. 
-- ⑤ Gear system: It scales the outputs from motor to the final output Angle ccording to a certain transmission ratio.
+- ① Сигналы: Он получает управляющий сигнал от микроконтроллера. 
+- ② Потенциометр: часть обратной связи сервопривода. Он измеряет положение выходного вала.
+- ③ Встроенная плата (внутренний контроллер): ядро сервопривода. Она обрабатывает внешний управляющий сигнал и сигнал обратной связи о положении и приводит в действие сервопривод. 
+- ④ Двигатель постоянного тока: исполнительная часть. Он выдает скорость, крутящий момент и положение. 
+- ⑤ Система передач: она масштабирует мощность двигателя до конечного выходного угла в соответствии с определенным передаточным отношением.
 
 
 
@@ -2800,21 +2799,21 @@ Overall, the automation and remote operation are optimizing the feeding process 
 
 
 
-**Drive the Servo:**
+**Привод сервопривода:**
 
-Signal(S) receives PWM to control the output of Servo, and **the position of output shaft directly relies on the duty cycle of PWM**. 
+Сигналы принимаются ШИМ для управления выходом сервопривода, и ** положение выходного вала напрямую зависит от рабочего цикла ШИМ**. 
 
-For instance:
+Например:
 
-- If we send a signal with pulse width of 1.5ms to Servo, its shaft(horn) will revolves to the middle position(90°);
-- If pulse width = `0.5ms`, the shaft turns to its minimum(0°);
-- If pulse width = `2.5ms`, the shaft turns to its maximum(180°).
+- Если мы отправим сигнал с длительностью импульса 1,5 мс на сервопривод, его вал (звуковой сигнал) повернется в среднее положение (на 90°);
+- Если длительность импульса = "0,5мс", вал повернется до минимума (0°);
+- Если длительность импульса = "2,5мс", вал поворачивается на максимум (180°).
 
-***NOTE: The maximum angle varies from the types of Servos. Some are 170° while some are only 90°. In spite of this, Servos usually will move a half (of the maximum) if they receive a signal with pulse width of 1.5ms.***
+***ПРИМЕЧАНИЕ: Максимальный угол наклона зависит от типа сервоприводов. У некоторых сервоприводов он равен 170°, а у других - только 90°. Несмотря на это, сервоприводы обычно перемещаются на половину (от максимальной) скорости, если получают сигнал с длительностью импульса 1,5мс.***
 
 ![img](./scratch_img/cou62.png)
 
-The period of a Servo usually lasts 20ms and it produce pulses at a frequency of `50Hz`. Most servos work normally at 40~200Hz. 
+Период работы сервопривода обычно составляет 20 мс, и он генерирует импульсы с частотой 50 Гц. Большинство сервоприводов обычно работают на частоте 40~200 Гц. 
 
 
 
@@ -2822,11 +2821,11 @@ The period of a Servo usually lasts 20ms and it produce pulses at a frequency of
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the Servo to io26.**
+**Подключите сервопривод к io26.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj61.png)
 
@@ -2834,58 +2833,58 @@ The period of a Servo usually lasts 20ms and it produce pulses at a frequency of
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize the serial port and define a variable **item** with an assignment of 80.
+- Инициализируем последовательный порт и определяем переменную **item** с присвоением значения 80.
 
   ![img](./scratch_img/st78.png)
 
-- Set **item** to the angle of Servo from 80° to 180°, rotating 1° every 15ms.
+- Установите ** элемент ** на угол поворота сервопривода от 80° до 180°, поворачивая его на 1° каждые 15 мс.
 
   ![img](./scratch_img/st79.png)
 
-- Servo rotates 1° every 15ms, from 180° to 80°.
+- Сервопривод поворачивается на 1° каждые 15 мс, от 180° до 80°.
 
   ![img](./scratch_img/st80.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st81.png)
 
-##### Test Result
+##### Результат теста
 
-The feeding box is slowly opened and then closed ,which is controllable.
+Блок подачи медленно открывается, а затем закрывается, что регулируется.
 
-**NOTE: SG90 servo can rotate 180°. As the feeding box is small, 100° of rotation is enough to completely close the box.**
+**ПРИМЕЧАНИЕ: Сервопривод SG90 может поворачиваться на 180°. Поскольку ящик для кормления маленький, достаточно повернуть его на 100°, чтобы он полностью закрылся.**
 
-- 80°: fully open
-- 120°: half open
-- 180°: close
+- 80°: полностью открыт
+- 120°: полуоткрыт
+- 180°: закрыт
 
-![img](./scratch_img/cou63.gif)
+![изображение](./scratch_img/cou63.gif)
 
 
 
 ------
 
-**ATTENTION**
+**ВНИМАНИЕ**
 
-**Do not put your fingers into the box to avoid nipping! **
+** Не засовывайте пальцы в коробку, чтобы не прищемить их! **
 
-**Do not block the door with something to avoid damaging servo!**
+** Не закрывайте дверцу чем-либо, чтобы не повредить сервопривод!**
 
 ------
 
 
 
-#### Ultrasonic Sensor
+#### Ультразвуковой датчик
 
-##### Description
+##### Описание
 
 ![img](./scratch_img/cou65.png)
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
 ![img](./scratch_img/couy61.png)
 
@@ -2895,21 +2894,21 @@ The feeding box is slowly opened and then closed ,which is controllable.
 
 
 
-The frequency of sound waves that the human can hear is 20Hz ~ 20KHz, while ultrasonic waves are beyond that range.
+Частота звуковых волн, которую может слышать человек, составляет 20 Гц ~ 20 кГц, в то время как ультразвуковые волны находятся за пределами этого диапазона.
 
-**Ultrasonic:** 
+**Ультразвуковые волны:** 
 
 ![img](./scratch_img/cou66.png)
 
-Ultrasonic module converts electricity and ultrasonic wave into each other by piezoelectric effect, and it also transmits and receives ultrasonic wave. 
+Ультразвуковой модуль преобразует электрическую энергию и ультразвуковые волны друг в друга за счет пьезоэлектрического эффекта, а также передает и принимает ультразвуковые волны. 
 
-This kind of wave features directivity, strong penetration and easy concentration of sound energy.
+Этот вид волн отличается направленностью, высокой проникающей способностью и легкой концентрацией звуковой энергии.
 
 ![img](./scratch_img/cou67.png)
 
-In this ultrasonic ranging system, we firstly program on MCU(ESP32 development board) to generate an original square wave at 40KHz and drive the ultrasonic module to emit it. Immediately, the module calculates the distance to the object after receiving the reflected wave(Echo) amplified and shaped by the circuit. Herein, it records the duration of emission and reflection and calculates the distance according to the time difference.
+В этой ультразвуковой дальномерной системе мы сначала программируем микроконтроллер (плата разработки ESP32) для генерации оригинальной прямоугольной волны частотой 40 кГц и заставляем ультразвуковой модуль излучать ее. Модуль немедленно вычисляет расстояние до объекта после получения отраженной волны (эхо), усиленной и сформированной схемой. При этом он регистрирует продолжительность излучения и отражения и вычисляет расстояние в соответствии с разницей во времени.
 
-Simply, MCU controls the module to emit ultrasonic wave which is bounced back after encountering obstacles and is received by the module. The time difference between them is an important factor in computing the distance (the speed of sound propagation in air is 340m/s). 
+Проще говоря, микроконтроллер управляет модулем, излучая ультразвуковую волну, которая отражается назад после столкновения с препятствиями и принимается модулем. Разница во времени между ними является важным фактором при расчете расстояния (скорость распространения звука в воздухе составляет 340 м/с). 
 
 
 
@@ -2917,11 +2916,11 @@ Simply, MCU controls the module to emit ultrasonic wave which is bounced back af
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the Echo of Ultrasonic module to io13 and Trig to io12.**
+**Подключите эхо-сигнал ультразвукового модуля к io13, а триггер - к io12.**
 
-**Attention: Connect yellow to S(Signal) and red to V(Power). Do not reverse them!**
+**Внимание: Подключите желтый к S (сигнал), а красный - к V (питание). Не меняйте их местами!**
 
 ![img](./scratch_img/couj62.png)
 
@@ -2929,19 +2928,19 @@ Simply, MCU controls the module to emit ultrasonic wave which is bounced back af
 
 
 
-##### Test Code
+##### Тестовый код
 
-Set the correct pin: Trig to pin io12; Echo to pin io13.
+Установите правильный pin-код: Trig - для ввода io12; Echo - для ввода io13.
 
 ![img](./scratch_img/st83.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-In this kit, the detection range is within 3~8cm.
+В этом наборе диапазон обнаружения составляет от 3 до 8 см.
 
-Open the serial monitor, and observe. 
+Откройте последовательный монитор и понаблюдайте. 
 
 ![img](./scratch_img/st82.png)
 
@@ -2949,11 +2948,11 @@ Open the serial monitor, and observe.
 
 
 
-#### Smart Feeding System
+#### Интеллектуальная система кормления
 
-##### Description
+##### Описание
 
-The smart feeding system intelligently feeds domestic fowls via an ultrasonic module and a servo. The former detects the distance to animals while the later controls to open or close the feeding box. When a pet is detected close to the box, servo opens it to feed.
+Интеллектуальная система кормления обеспечивает интеллектуальное кормление домашней птицы с помощью ультразвукового модуля и сервопривода. Первый определяет расстояние до животных, в то время как второй управляет открытием или закрытием кормушки. При обнаружении животного рядом с кормушкой сервопривод открывает ее для кормления.
 
 
 
@@ -2961,11 +2960,11 @@ The smart feeding system intelligently feeds domestic fowls via an ultrasonic mo
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the Echo of Ultrasonic module to io13 and Trig to io12; connect the servo to io26.**
+**Подключите эхо-сигнал ультразвукового модуля к io13, а триггер - к io12; подключите сервопривод к io26.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power) and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj63.png)
 
@@ -2975,82 +2974,81 @@ The smart feeding system intelligently feeds domestic fowls via an ultrasonic mo
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow:
+Последовательность выполнения кода:
 
 ![img](./scratch_img/flo6.png)
 
 
 
-Code:
+Код:
 
-- Initialize the serial port. Define a variable and assign it to 180. 
+- Инициализируйте последовательный порт. Определите переменную и присвойте ей значение 180. 
 
   ![img](./scratch_img/st84.png)
 
-- Set the pin correctly, and print the received value. 
+- Правильно установите pin-код и выведите полученное значение. 
 
   ![img](./scratch_img/st85.png)
 
-- Determine the detected distance value. If it is within 2cm ~ 7cm, the feeding box will open. 
+- Определите значение обнаруженного расстояния. Если оно находится в пределах 2-7 см, откроется ящик для подачи. 
 
   ![img](./scratch_img/st86.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st87.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-When an animal is detected, open the feeding box.
+При обнаружении животного откройте коробку с кормом.
 
 
 
 -------
 
-**ATTENTION**
+**ВНИМАНИЕ**
 
-**Do not put your fingers into the box to avoid nipping! **
+**Не засовывайте пальцы в коробку, чтобы не быть покусанными! **
 
-**Do not block the door with something to avoid damaging servo!**
-
-------
-
-
-
-#### FAQ
-
-
-
-
-
-##### Q: Servo doesn't work.
-
-A: It may be stuck by itself or by wires when mount the bottom plate. before installing, please adjust the servo to 180° first. For how, please refer to the installation guidance. 
+**Не закрывайте дверцу чем-либо, чтобы не повредить сервопривод!**
 
 ------
 
-##### Q: The detected distance is inaccurate.
 
-A: When detecting, please measure from the transmitting head. Herein, this module is not a high-precision detector, so errors may exist.
+#### ЧАСТО задаваемые вопросы
+
+
+
+
+
+##### В: Сервопривод не работает.
+
+О: Возможно, он застрял сам по себе или в проводах при монтаже нижней панели. перед установкой, пожалуйста, сначала отрегулируйте сервопривод на 180°. Как это сделать, смотрите в руководстве по установке. 
+
+------
+
+##### В: Измеренное расстояние указано неточно.
+
+О: При измерении, пожалуйста, измеряйте расстояние от передающей головки. Данный модуль не является высокоточным детектором, поэтому возможны ошибки.
 
 ![img](./scratch_img/cou69.png)
 
 ------
 
-### 	Project 7: Temperature Control System
+### Проект 7: Система контроля температуры
 
 
 
-In this project, we will demonstrate how to use temperature and humidity sensor, fan and LCD1602 display to constitute an intelligent temperature and humidity control system.
+В этом проекте мы продемонстрируем, как использовать датчик температуры и влажности, вентилятор и ЖК-дисплей LCD1602 для создания интеллектуальной системы контроля температуры и влажности.
 
-The system measures ambient temperature and humidity and controls fan to cool down as needed. When the temperature exceeds the set threshold, the fan automatically turns on to reduce the ambient temperature below the set value. Meanwhile, the current temperature and humidity values will be displayed on LCD1602. 
+Система измеряет температуру и влажность окружающей среды и управляет вентилятором для охлаждения по мере необходимости. Когда температура превышает установленный порог, вентилятор автоматически включается, чтобы снизить температуру окружающей среды ниже установленного значения. При этом на ЖК-дисплее 1602 будут отображаться текущие значения температуры и влажности. 
 
-Therefore, it realizes automatic adjustment of ambient temperature and humidity, which is perfect for projects that require these functions.
+Таким образом, он обеспечивает автоматическую регулировку температуры и влажности окружающей среды, что идеально подходит для проектов, требующих этих функций.
 
 ![img](./scratch_img/cout7.png)
 
@@ -3060,7 +3058,7 @@ Therefore, it realizes automatic adjustment of ambient temperature and humidity,
 
 
 
-#### Flow Diagram
+#### Технологическая схема
 
 ![image-20230607121651834](./scratch_img/image-20230607121651834.png)
 
@@ -3068,11 +3066,11 @@ Therefore, it realizes automatic adjustment of ambient temperature and humidity,
 
 
 
-#### Temperature and Humidity Sensor
+#### Датчик температуры и влажности
 
-##### Description
+##### Описание
 
-DHT11 temperature and humidity sensor outputs digital signals. It applies principles of analog signal acquisition and conversion as well as temperature and humidity sensing technology, so that it features long-term stability and high reliability. Besides, the sensor integrates a high-precision resistive humidity sensor and a resistive thermosensitive temperature sensor, and is connected with an 8-bit high-performance MCU.
+Датчик температуры и влажности DHT11 выдает цифровые сигналы. В нем используются принципы сбора и преобразования аналоговых сигналов, а также технология измерения температуры и влажности, что обеспечивает его долговременную стабильность и высокую надежность. Кроме того, датчик объединяет высокоточный резистивный датчик влажности и резистивный термочувствительный датчик температуры и подключен к 8-разрядному высокопроизводительному микроконтроллеру.
 
 ![img](./scratch_img/cou71.png)
 
@@ -3080,33 +3078,33 @@ DHT11 temperature and humidity sensor outputs digital signals. It applies princi
 
 
 
-**DHT11 Communication Means:**
+**Средства связи DHT11:**
 
-DHT11 communicates through monobus(a single bus) which exchanges and controls data.
+DHT11 осуществляет связь через monobus (единую шину), которая обеспечивает обмен данными и управление ими.
 
-- Monobus transmits **Data Bit**:
+- Монобус передает ** Бит данных**:
 
-  - Data format of monobus: transmit 40bit data every time, and high-bit first. 
-  - 8bit humidity integer value + 8bit humidity decimal value + 8bit temperature integer value + 8bit temperature decimal value + 8bit parity.
-  - **NOTE: Humidity decimal value equals 0.**
+  - Формат данных монобуса: каждый раз передается 40-битная информация, сначала старший бит. 
+  - 8-битное целое значение влажности + 8-битное десятичное значение влажности + 8-битное целое значение температуры + 8-битное десятичное значение температуры + 8-битная четность.
+  - **ПРИМЕЧАНИЕ: Десятичное значение влажности равно 0.**
 
-- **Paraty Bit**:
-  - 8bit humidity integer value + 8bit humidity decimal value + 8bit temperature integer value + 8bit temperature decimal value. 
-  - 8bit parity equals the end 8 bits of the result.
+- **Четный бит**:
+  - 8-битное целое значение влажности + 8-битное десятичное значение влажности + 8-битное целое значение температуры + 8-битное десятичное значение температуры. 
+  - 8-битная четность равна конечным 8 битам результата.
 
 
 
-**Timing Diagram:** 
+**Временная диаграмма:** 
 
 ![img](./scratch_img/cou73.png)
 
-**NOTE: **
+**ПРИМЕЧАНИЕ: **
 
-**The host always reads the temperature and humidity values of last measurement from DHT11. Therefore, If the interval between two measurements is long, please consecutively detect twice and adopt the second result.**
+**Хост всегда считывает значения температуры и влажности, полученные при последнем измерении, с DHT11. Поэтому, если интервал между двумя измерениями большой, пожалуйста, выполните два измерения подряд и используйте второй результат.**
 
 
 
-For more details, please visit ASAIR official website: [http://www.aosong.com/products-21.html](http://www.aosong.com/products-21.html)
+Для получения более подробной информации посетите официальный веб-сайт ASAIR: [http://www.aosong.com/products-21.html](http://www.aosong.com/products-21.html)
 
 
 
@@ -3114,11 +3112,11 @@ For more details, please visit ASAIR official website: [http://www.aosong.com/pr
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the temperature and humidity sensor to io17.**
+**Подключите датчик температуры и влажности к io17.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj71.png)
 
@@ -3128,28 +3126,28 @@ For more details, please visit ASAIR official website: [http://www.aosong.com/pr
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize the serial port and the sensor.
+- Инициализируйте последовательный порт и датчик.
 
   ![img](./scratch_img/st89.png)
 
-- The serial monitor prints and refreshes humidity and temperature values per second.
+- Последовательный монитор печатает и обновляет значения влажности и температуры в секунду.
 
   ![img](./scratch_img/st90.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st91.png)
 
 
 
-##### Test Result
+##### Результат теста
 
 ![img](./scratch_img/cou71-1.png)
 
-Open the serial monitor, and you will see the current temperature and humidity value. 
+Откройте последовательный монитор, и вы увидите текущее значение температуры и влажности. 
 
 ![img](./scratch_img/st88.png)
 
@@ -3157,11 +3155,11 @@ Open the serial monitor, and you will see the current temperature and humidity v
 
 
 
-#### LCD 1602 Module
+#### ЖК-модуль 1602
 
-##### Description
+##### Описание
 
-LCD 1602 possesses a standard 14-pin (without back light) or 16-pin (with back light) interface, saving the pins of MCU. Its display drives IC to realize I2C control. 
+LCD 1602 оснащен стандартным 14-контактным интерфейсом (без подсветки) или 16-контактным интерфейсом (с подсветкой), что позволяет экономить контакты микроконтроллера. Его дисплей управляет микросхемой IC для реализации управления I2C. 
 
 ![img](./scratch_img/cou72.png)
 
@@ -3169,42 +3167,42 @@ LCD 1602 possesses a standard 14-pin (without back light) or 16-pin (with back l
 
 
 
-**I2C Serial Communication:**
+**Последовательная связь I2C:**
 
-I2C communication, known fully as Inter-Integrated Circuit (IIC) or Two-Wire Interface (TWI), is a commonly-used dual-bus (a host and a slave) communication protocol, which is developed by Phillips Semiconductor (purchased by US NXP Semiconductors).
+Коммуникация I2C, полностью известная как межинтеграционная схема (IIC) или двухпроводной интерфейс (TWI), представляет собой широко используемый протокол связи с двумя шинами (основной и ведомый), разработанный компанией Phillips Semiconductor (приобретенный американской компанией NXP Semiconductors).
 
-The biggest advantage is that only two wires complete the transmission of data, which largely simplifies circuits. In total, I2C bus can connect 127 nodes in parallel, so it supports multiple hosts and slaves. 
+Самым большим преимуществом является то, что передача данных осуществляется только по двум проводам, что значительно упрощает схемы. В общей сложности шина I2C может параллельно подключать 127 узлов, поэтому она поддерживает несколько хостов и подчиненных устройств. 
 
-Generally, external power supply is needless for slaves, as I2C bus will transmit the power to them:
+Как правило, для подчиненных устройств внешний источник питания не требуется, так как питание будет передаваться по шине I2C:
 
 ![img](./scratch_img/cou75.png)
 
-I2C bus transmits data via 8-bit data transmission. Usually, one-byte-data is composed of nine clock signals, eight of which transmit data and the last one marks the end of transmission. 
+Шина I2C передает данные с помощью 8-битной передачи данных. Обычно однобайтовые данные состоят из девяти тактовых сигналов, восемь из которых передают данные, а последний означает окончание передачи. 
 
-Moreover, I2C bus supports multi-byte data transmission by repeating the above process continuously.
-
-
-
-I2C Protocol basically consists of:
-
-- **Starting signal**: Before transmission, sender transmits a starting signal to inform receiver of starting point.
-- **Address**: It notifies receiver to whom the data is being sent. 
-- **Data**: It is transmitted one byte each time and bit by bit. 
-- **Ending Signal**: When finishing transmission, sender ends data with an ending signal to inform receiver that process is over. 
+Кроме того, шина I2C поддерживает многобайтовую передачу данных, непрерывно повторяя описанный выше процесс.
 
 
 
-**Timing Diagram of Serial Protocol:**
+Протокол I2C в основном состоит из:
 
-For more details, please visit the official website: [https://www.nxp.com/](https://www.nxp.com/)
+- **Стартового сигнала**: Перед передачей отправитель передает начальный сигнал, чтобы сообщить получателю о начальной точке.
+- **Адрес**: Он уведомляет получателя, кому отправляются данные. 
+- **Данные**: Они передаются по одному байту каждый раз и бит за битом. 
+- **Сигнал завершения**: При завершении передачи отправитель завершает передачу данных сигналом завершения, информируя получателя о завершении процесса. 
+
+
+
+**Временная схема последовательного протокола:**
+
+Для получения более подробной информации, пожалуйста, посетите официальный веб-сайт: [https://www.nxp.com/](https://www.nxp.com/)
 
 ![img](./scratch_img/cou76.png)
 
 ![img](./scratch_img/cou77.png)
 
-We provide you with a library file **Wire.h** on Arduino for I2C protocol, in which functions can be directly called to communicate with I2C/TWI devices. 
+Мы предоставляем вам файл библиотеки **Wire.h** для Arduino для протокола I2C, в котором можно напрямую вызывать функции для взаимодействия с устройствами I2C/TWI. 
 
-For details of library, please refer to: 
+Для получения подробной информации о библиотеке, пожалуйста, обратитесь к: 
 
 [https://www.arduino.cc/reference/en/language/functions/communication/wire/](https://www.arduino.cc/reference/en/language/functions/communication/wire/)
 
@@ -3214,11 +3212,11 @@ For details of library, please refer to:
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the LCD to I2C BUS as shown below.**
+**Подключите ЖК-дисплей к шине I2C, как показано ниже.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj72.png)
 
@@ -3226,30 +3224,30 @@ For details of library, please refer to:
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize I2C address of LCD and turn on its back light.
+- Инициализируйте адрес I2C на ЖК-дисплее и включите его подсветку.
 
   ![img](./scratch_img/st92.png)
 
-- Set the LCD cursor position in X and Y axis (X-axis displays a maximum of 16 characters, and Y-axis displays a maximum of 2 columns).
+- Установите положение курсора на ЖК-дисплее по осям X и Y (по оси X отображается не более 16 символов, а по оси Y - не более 2 столбцов).
 
   ![img](./scratch_img/st93.png)
 
-- Input the print content (No more than 16 characters, otherwise it will not be complete). 
+- Введите текст для печати (не более 16 символов, иначе он будет неполным). 
 
   ![img](./scratch_img/st94.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st95.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-LCD1602 opens its back light and displays ”**HELLO WORLD 0**“ and ”**HELLO WORLD 1**“.
+ЖК-дисплей 1602 включает заднюю подсветку и отображает ”**HELLO WORLD 0**“ и ”**HELLO WORLD 1**“.
 
 ![img](./scratch_img/cou78.png)
 
