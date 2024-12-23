@@ -1,37 +1,37 @@
-# Scratch Tutorials
+# Обучающие программы по скретчу
 
-## Software Installation
+## Установка программного обеспечения
 
-### KidsBlock Installation
+### Установка детского блока
 
-#### Install Kidsblock on Windows System
+#### Установить Kidsblock в системе Windows
 
-1. You could download KidsBlock from: 
+1. Вы можете скачать KidsBlock с сайта: 
 
-   - Link: [http://xiazai.keyesrobot.cn/KidsBlock.exe](http://xiazai.keyesrobot.cn/KidsBlock.exe)
+   - Ссылка: [http://xiazai.keyesrobot.cn/KidsBlock.exe ](http://xiazai.keyesrobot.cn/KidsBlock.exe )
 
-   - Provided file: ![img](./scratch_img/an1-1.png)
+   - Предоставленный файл: ![img](./scratch_img/an1-1.png)
 
      
 
-2. After downloading, click “KidsBlock.exe”![img](./scratch_img/an1.png)
+2. После загрузки нажмите “KidsBlock.exe”![img](./scratch_img/an1.png)
 
-3. Tick “**Anyone who uses this computer(all users)**” and then click “**Next**”.
+3. Отметьте “**Все, кто использует этот компьютер (все пользователи)**” и нажмите “**Далее**”.
 
 ![img](./scratch_img/an2.png)
 
-4. Click “**Browse...**” to choose a path to install (Here we choose Disk C; you may select any where you like), and click “**Install**”. Now it is installing!
+4. Нажмите “**Обзор...**”, чтобы выбрать путь для установки (здесь мы выбираем диск C; вы можете выбрать любое место, которое вам нравится), и нажмите “**Установить**”. Установка началась!
 
 
 ![img](./scratch_img/an3.png)
 
 ![img](./scratch_img/an4.png)
 
-5. After installation completing, click “**Finish**” to open it.
+5. После завершения установки нажмите “**Готово**”, чтобы открыть ее.
 
 ![img](./scratch_img/an5.png)
 
-6. If a warning shows up, please just click “**Allow access**” to enter the software main page.
+6. Если появится предупреждение, пожалуйста, просто нажмите “**Разрешить доступ**”, чтобы перейти на главную страницу программного обеспечения.
 
 ![img](./scratch_img/an6.png)
 
@@ -39,37 +39,37 @@
 
 
 
-#### Install Kidsblock on MacOS
+#### Установить Kidsblock на macOS
 
-1. Please download Kidsblock package first: [http://xiazai.keyesrobot.cn/KidsBlock.dmg](http://xiazai.keyesrobot.cn/KidsBlock.dmg)
+1. Пожалуйста, сначала скачайте пакет Kidsblock: [http://xiazai.keyesrobot.cn/KidsBlock.dmg](http://xiazai.keyesrobot.cn/KidsBlock.dmg)
 
 ![img](./scratch_img/an7.png)
 
-2. Click KidsBlock and drag the K"**idsBlock Desktop**" into "**Applications**", as shown below.
+2. Нажмите KidsBlock и перетащите значок "Рабочий стол idsBlock" в "Приложения", как показано ниже.
 
 ![img](./scratch_img/an8.png)
 
-3. After installation, the KidsBlock icon will show in operating pad:
+3. После установки на панели управления появится значок детского блока:
 
-   ![img](./scratch_img/an9.png)
+   ![img](./scratch_img/an9.png).
 
-4. Click the KidsBlock icon to enter the software. If it fails, please modify some computer settings to re-enter it. This is because Mac Systems, by default, only authorize the installation in App Store, so others is not allowed to be installed.
+4. Нажмите на значок KidsBlock, чтобы войти в программу. Если это не удается, измените некоторые настройки компьютера, чтобы повторно ввести ее. Это связано с тем, что системы Mac по умолчанию разрешают установку только в App Store, поэтому установка других приложений запрещена.
 
    ![img](././scratch_img/an9-1.png)
 
-5. Open the settings, and click Privacy and Security. Switch the security option to “App Store and Approved Developers”, and click “Still Open”.
+5. Откройте настройки и выберите Конфиденциальность и безопасность. Переключите параметр безопасности на “Магазин приложений и одобренные разработчики” и нажмите “Все еще открыто”.
 
    ![img](././scratch_img/an9-2.png)
 
-6. Click “Open” to re-enter the blocked software.
+6. Нажмите “Открыть”, чтобы повторно войти в заблокированное программное обеспечение.
 
    ![img](././scratch_img/an9-3.png)
 
-7. After settings, it can work normally.
+7. После настройки он может работать в обычном режиме.
 
    ![img](././scratch_img/an9-4.png)
 
-8. The startup interface is as below. Now enjoy your journey of programming!
+8. Интерфейс запуска выглядит следующим образом. Теперь наслаждайтесь своим путешествием в программировании!
 
    ![img](././scratch_img/an9-5.png)
 
@@ -77,108 +77,108 @@
 
 
 
-### Software Guidance
+### Руководство по программному обеспечению
 
-(**Following demonstrations are based on Windows System, and is only a reference for MacOS.**)
+(** Приведенные ниже демонстрации основаны на системе Windows и являются только ссылкой для macOS.**)
 
-#### Main Page Function Distribution 1
+#### Функциональный раздел главной страницы 1
 
 ![img](./scratch_img/an10.png)
 
 
 
-##### Select Language
+##### Выберите язык
 
-Click ![img](./scratch_img/an11.png) to select “English” or “简体中文" ![img](./scratch_img/an12.png)
+Нажмите ![img](./scratch_img/an11.png), чтобы выбрать “Английский” или “简体中文" ![img](./scratch_img/an12.png)
 
 
 
-##### Install Driver
+##### Установить драйвер
 
-**NOTE: If your computer has already installed a driver, please just skip this section. If not, please follow these steps.**
+**ПРИМЕЧАНИЕ: Если на вашем компьютере уже установлен драйвер, пожалуйста, просто пропустите этот раздел. Если нет, выполните следующие действия.**
 
-- Click ![img](./scratch_img/an13.png) to select “**Install driver**”.
+- Нажмите ![img](./scratch_img/an13.png), чтобы выбрать “**Установить драйвер**”.
 
 
 ![img](./scratch_img/an14.png)
 
-- Click “**Next**” when you see the device driver installation wizard:
+- Нажмите “**Далее**”, когда откроется мастер установки драйвера устройства:
 
 ![img](./scratch_img/an15.png)
 
-- Click “**Finish**”.
+- Нажмите “**Готово**”.
 
 ![img](./scratch_img/an16.png)
 
-- Click “**Next**”.
+- Нажмите “**Далее**”.
 
 ![img](./scratch_img/an17.png)
 
-- Click “**Finish**”.
+- Нажмите ”**Завершить**".
 
 ![img](./scratch_img/an18.png)
 
-- If a warning pops up, just click “**Allow**”. Then click “**Install**”.
+- Если появится предупреждение, просто нажмите “**Разрешить**”. Затем нажмите “**Установить**”.
 
 ![img](./scratch_img/an19.png)
 
-- Tap “**Finish**”.
+- Нажмите ”**Завершить**".
 
 ![img](./scratch_img/an20.png)
 
-- Click “**Extract**”.
+- Нажмите “**Извлечь**”.
 
 ![img](./scratch_img/an21.png)
 
-- Click “**Next**”.
+- Нажмите “**Далее**”.
 
 ![img](./scratch_img/an22.png)
 
-- Tick “**I accept this agreement**” and click “**Next**”.
+- Отметьте “**Я принимаю данное соглашение**” и нажмите “**Далее**”.
 
 ![img](./scratch_img/an23.png)
 
-- Click “**Finish**”.
+- Нажмите ”**Завершить**".
 
 ![img](./scratch_img/an24.png)
 
-- Choose “**INSTALL**”.
+- Выберите “**УСТАНОВИТЬ**”.
 
 ![img](./scratch_img/an25.png)
 
-- A couple of seconds later, the driver will be successfully installed. Then click “**OK**”.
+- Через пару секунд драйвер будет успешно установлен. Затем нажмите “**OK**”.
 
 ![img](./scratch_img/an26.png)
 
 
 
-##### Select Devices
+##### Выберите устройства
 
-###### Choose a device and a serial port
+###### Выберите устройство и последовательный порт
 
-- Click ![img](././scratch_img/an27.png) to choose a device. 
+- Нажмите ![img](././scratch_img/an27.png), чтобы выбрать устройство. 
 
-- Here we enter **Kit** to find **Smart farm for ESP32** and add it. Note that all sensors are included in this kit, so you do not need to import them additionally. 
+- Здесь мы вводим **Kit**, чтобы найти **Smart farm для ESP32** и добавить его. Обратите внимание, что все датчики входят в данный комплект, поэтому вам не нужно импортировать их дополнительно. 
 
   ![img](././scratch_img/an28.png)
 
-- After import this kit, you will see the following interface of port selecting. Click **Connect** at the correct port.
+- После импорта этого комплекта вы увидите следующий интерфейс выбора порта. Нажмите **Подключиться** к нужному порту.
 
   ![img](././scratch_img/an29.png)
 
-- Tap **Go to Editor**.
+- Нажмите **Перейти в редактор**.
 
   ![img](././scratch_img/an30.png)
 
-- Main Page:
+- Главная страница:
 
   ![img](././scratch_img/an31.png)
 
-###### Disconnect the device
+###### Отключите устройство
 
-- If you want to disconnect the kit and port, please click ![img](././scratch_img/an32.png).
+- Если вы хотите отключить комплект и порт, пожалуйста, нажмите ![img](././scratch_img/an32.png).
 
-- Then tap **Disconnect** to unbind the current connection. 
+- Затем нажмите **Отключить**, чтобы отменить текущее подключение. 
 
   ![img](././scratch_img/an33.png)
   
@@ -188,93 +188,93 @@ Click ![img](./scratch_img/an11.png) to select “English” or “简体中文"
 
 
 
-#### Main Page Function Distribution 2
+#### Функциональное распределение главной страницы 2
 
 ![img](././scratch_img/an34.png)
 
 
 
-##### Expand a Sensor/Module
+##### Расширение датчика/модуля
 
-**NOTE: This part can be SKIPPED, as all required sensors are integrated in the kit with no need to expand. If you want to adopt an excluded module, please refer to the following procedures.**
+**ПРИМЕЧАНИЕ: Эту часть можно пропустить, так как все необходимые датчики встроены в комплект и их не нужно расширять. Если вы хотите использовать исключенный модуль, пожалуйста, ознакомьтесь со следующими процедурами.**
 
-- Click ![an42](././scratch_img/an35.png) to enter the sensors/modules extension library.
+- Нажмите ![an42](././scratch_img/an35.png), чтобы перейти в библиотеку расширений датчиков/модулей.
 
-- Choose an extension.
+- Выберите расширение.
 
   ![img](././scratch_img/an36.png)
 
-- For instance, a buzzer module is required, please click passive buzzer: 
+- Например, если требуется модуль зуммера, пожалуйста, выберите пассивный зуммер.: 
 
 - ![img](././scratch_img/an37.png)
 
-- When “**Not loaded**” becomes “**Loaded**”, this module is successfully imported.
+- Когда “**Не загружено**” становится “**Загружено**”, этот модуль успешно импортируется.
 
   ![img](././scratch_img/an38.png)
 
-- Click ![img](././scratch_img/an39.png) to back to the editor. Now you will find that a Passive buzzer block appears in Code.
+- Нажмите ![img](././scratch_img/an39.png), чтобы вернуться в редактор. Теперь вы увидите, что в коде появился блок пассивного зуммера.
 
 ![img](././scratch_img/an41.png)
 
-- If you want to remove the “Passive buzzer”, just click ![img](././scratch_img/an42.png) to enter library and tap.
+- Если вы хотите удалить “пассивный зуммер”, просто нажмите ![img](././scratch_img/an42.png), чтобы войти в библиотеку, и нажмите.
 
   ![img](././scratch_img/an38.png)
 
--  When “Loaded” shifts to “Not loaded”, this module is successfully deleted.
+- Когда значение “Загружено” изменится на “Не загружено”, этот модуль будет успешно удален.
 
   ![img](././scratch_img/an37.png)
 
   
 
-##### Import File
+##### Импорт файла
 
-- Method 1
+- Способ 1
 
-   - If the software is not in operation, then directly click SB3 file to open it. For example, click ![img](././scratch_img/an46.png)to open it. Remember to select a device.
+   - Если программа не работает, то непосредственно щелкните файл SB3, чтобы открыть его. Например, нажмите ![img](././scratch_img/an46.png), чтобы открыть его. Не забудьте выбрать устройство.
 
      ![img](././scratch_img/an54.png)
 
-- Method 2
+- Способ 2
 
-   - Open Kidsblock. Click “**file**” to choose “**Load from your computer**”.![img](././scratch_img/an47.png)	
+   - Откройте Kidsblock. Нажмите “**файл**”, чтобы выбрать “**Загрузить с вашего компьютера**”.![img](././scratch_img/an47.png)	
 
-   - Select an SB3 file (like ![img](././scratch_img/an46.png)).
+   - Выберите файл SB3 (например ![img](././scratch_img/an46.png)).
 
      ![img](././scratch_img/an50.png)
 
-   - Import successfully!
+   - Импорт выполнен успешно!
    
      ![img](././scratch_img/an54.png)
    
 
 
 
-##### Upload Code & Set Baud Rate
+##### Код загрузки и установка скорости передачи данных
 
-###### Upload code
+###### Код загрузки
 
-- Upload file ![img](././scratch_img/an47.png) to Kidsblock.
+- Загрузи файл ![img](././scratch_img/an47.png) в Kidsblock.
 
-- Connect the development board to your computer (If the you cannot see a port, please install a driver first), and select the correct port and click ![img](././scratch_img/an52.png).
+- Подключите плату разработки к компьютеру (если вы не видите порт, пожалуйста, сначала установите драйвер), выберите нужный порт и нажмите ![img](././scratch_img/an52.png).
 
   ![img](././scratch_img/an54.png)
 
-- Wait for uploading.
+- Дождаться загрузки.
 
   ![img](././scratch_img/an53.png)
 
-###### Set Baud rate
+###### Установить скорость передачи данных в бодах
 
-- If there is not a print box, please click one of ![img](././scratch_img/an56.png) to adjust the box size. 
-  - Small print box![img](././scratch_img/an58.png)
-  - Large print box![img](././scratch_img/an59.png)
-  - No print box![img](././scratch_img/an60.png)
+- Если поля для печати нет, пожалуйста, нажмите на одно из ![img](././scratch_img/an56.png), чтобы изменить размер поля. 
+  - Поле для печати небольшого размера![img](././scratch_img/an58.png)
+  - Поле для печати крупным шрифтом![img](././scratch_img/an59.png)
+  - Поле для печати отсутствует![img](././scratch_img/an60.png)
 
-- Click ![img](././scratch_img/an57.png) to set the corresponding baud rate.
+- Нажмите ![img](././scratch_img/an57.png), чтобы задать соответствующую скорость передачи данных в бодах.
 
 ![img](././scratch_img/an55.png)
 
-- “**Hello KidsBlock**” starts to be printed in the box after setting.
+- после установки в поле будет выводиться надпись “**Hello KidsBlock**”.
 
 
 ![img](././scratch_img/an62.png)
@@ -283,17 +283,17 @@ Click ![img](./scratch_img/an11.png) to select “English” or “简体中文"
 
 ------
 
-## Assembling
+## Сборка
 
-During assembling, some codes are required to be burned, so please install software first. 
+Во время сборки необходимо записать некоторые коды, поэтому, пожалуйста, сначала установите программное обеспечение. 
 
-The whole assembling generally can be divided into two parts: assembling parts and wirings. 
+Обычно всю сборку можно разделить на две части: сборка деталей и проводов. 
 
 ------
 
-### Step 1
+### Шаг 1
 
-#### 1.1 Required components
+#### 1.1 Необходимые компоненты
 
 ![img](./scratch_img/image001.png)
 
@@ -325,11 +325,11 @@ The whole assembling generally can be divided into two parts: assembling parts a
 
 
 
-### Step 2
+### Шаг 2
 
 ------
 
-#### 2.1 Required components
+#### 2.1 Необходимые компоненты
 
 ![img](./scratch_img/image007.png)
 
@@ -337,7 +337,7 @@ The whole assembling generally can be divided into two parts: assembling parts a
 
 #### 2.2
 
-Assemble the wooden board X and O on bottom plate H
+Прикрепите деревянную доску X и O к нижней пластине H
 
 ![img](./scratch_img/image008.png)
 
@@ -373,13 +373,13 @@ Assemble the wooden board X and O on bottom plate H
 
 ------
 
-#### 2.8 Wiring
+#### 2.8 Подключение
 
-|    Module    |   Wire    | Pin  |
+| Модуль | Провод | Вывод |
 | :----------: | :-------: | :--: |
-| Relay Module | 3PIN 20cm | IO25 |
+| Релейный модуль | 3PIN 20 см | IO25 |
 
-**Pay attention to the color of the Dupont wire: For the relay module, connect yellow to S, red to V, black to G.**
+**Обратите внимание на цвет провода Dupont: для модуля реле подключите желтый к S, красный к V, черный к G.**
 
 ![img](./scratch_img/image015.png)
 
@@ -393,11 +393,11 @@ Assemble the wooden board X and O on bottom plate H
 
 
 
-### Step 3
+### Шаг 3
 
 ------
 
-#### 3.1 Required components
+#### 3.1 Необходимые компоненты
 
 ![img](./scratch_img/image016.png)
 
@@ -462,7 +462,6 @@ Assemble the wooden board X and O on bottom plate H
 ![img](./scratch_img/image026.png)
 
 ------
-
 
 
 ### Step 4
