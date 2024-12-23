@@ -1432,33 +1432,33 @@
 
 ------
 
-## Projects
+## Проекты
 
-### Project 1: Lighting System
+### Проект 1: Система освещения
 
-**Let's start our first project, lighting system.**
-
-------
-
-Lighting up an LED is one of the most fundamental Arduino practice. 
-
-This start-up lesson is designed for beginners to understand hardware and software programming on ESP32 development board and to master basic circuit and programming knowledge.
-
-![img](./scratch_img/cout1.png)
-
-Therefore, our tutorial guidance is simple. And this intriguing project can be applied in actual scenarios at home or in office.
-
-In this project, you will have learned the basic connections and settings of the ESP32 development board in the Arduino programming. What's more, some functions will also be presented for you, such as lighting on/off an LED via the output level of a digital pin or by a button. 
-
-All in all, this is an entry-level tutorial to lay the foundation for subsequent Arduino practices.
-
-
+** Давайте начнем наш первый проект "система освещения".**
 
 ------
 
+Включение светодиода - одна из самых фундаментальных практик Arduino. 
+
+Этот вводный урок предназначен для начинающих пользователей, которые хотят разобраться в программировании аппаратного и программного обеспечения на плате разработки ESP32 и овладеть базовыми схемами и знаниями в области программирования.
+
+![img](./scratch_img/cout 1.png)
+
+Таким образом, наше руководство по обучению очень простое. И этот интригующий проект может быть применен в реальных условиях дома или в офисе.
+
+В этом проекте вы познакомитесь с основными подключениями и настройками платы разработки ESP32 при программировании на Arduino. Более того, вам также будут представлены некоторые функции, такие как включение / выключение светодиода с помощью выходного уровня цифрового вывода или кнопки. 
+
+В целом, это учебное пособие начального уровня, которое заложит основу для последующих практик в Arduino.
 
 
-#### Flow Diagram
+
+------
+
+
+
+#### Блок-схема
 
 ![image-20230607175228556](./scratch_img/image-20230607175228556.png)
 
@@ -1468,15 +1468,15 @@ All in all, this is an entry-level tutorial to lay the foundation for subsequent
 
 
 
-#### Light up an LED
+#### Включите светодиод
 
-##### Description
+##### Описание
 
-LED, short for Light Emitting Diode, is a solid-state semiconductor that converts electrical energy into visible light, so it is also called solid-state lighting. 
+СВЕТОДИОД, сокращенно от светоизлучающий диод, представляет собой твердотельный полупроводник, который преобразует электрическую энергию в видимый свет, поэтому его также называют твердотельным источником света. 
 
-When current passes through an LED, it light up.
+Когда ток проходит через светодиод, он загорается.
 
-**Various LED:**
+** Различные светодиодные:**
 
 ![img](./scratch_img/cou1.png)
 
@@ -1486,7 +1486,7 @@ When current passes through an LED, it light up.
 
 
 
-**LED module** is a device to output, whose brightness and blinks can be controlled. For how to use, you only need to directly plug it into digital output pins on the development board.
+**Светодиодный модуль** - это устройство для вывода, яркостью и миганием которого можно управлять. Для использования вам нужно всего лишь подключить его непосредственно к цифровым выходным контактам на плате разработчика.
 
 ![img](./scratch_img/cou12.png)
 
@@ -1494,19 +1494,19 @@ When current passes through an LED, it light up.
 
 
 
-**Working principle:**
+**Принцип работы:**
 
-When S is at a high level, Q1 triode is into conduction, and VCC voltage passes through LED to light up it. 
+Когда значение S достигает высокого уровня, триод Q1 переходит в режим проводимости, и напряжение переменного тока проходит через светодиод, чтобы он загорелся. 
 
 ![img](./scratch_img/couy1.png)
 
 
 
-**Parameters:**
+**Параметры:**
 
-- Voltage: 3~5V
-- Current: ≤1.5mA
-- Power: 0.07W
+- Напряжение: 3~5 В
+- Ток: ≤1,5мА
+- Мощность: 0,07 Вт
 
 
 
@@ -1514,11 +1514,11 @@ When S is at a high level, Q1 triode is into conduction, and VCC voltage passes 
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the LED module to io27.**
+**Подключите светодиодный модуль к io27.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj1.png)
 
@@ -1528,43 +1528,43 @@ When S is at a high level, Q1 triode is into conduction, and VCC voltage passes 
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Open Kidsblock and choose the correct device and port. 
+- Откройте Kidsblock и выберите правильное устройство и порт. 
 
   ![img](./scratch_img/st1.png)
 
-- Drag ![img](./scratch_img/st11.png) from ![img](./scratch_img/st14.png) to the code editing area. Code Blocks execute only when they are in this area.
+- Перетащите ![img](./scratch_img/st11.png) из ![img](./scratch_img/st14.png) в область редактирования кода. Блоки кода выполняются только тогда, когда они находятся в этой области.
 
   ![img](./scratch_img/st12.png)
 
-- With this block, when booting the development board, code will run. 
+- С этим блоком при загрузке платы разработки будет выполняться код. 
 
   ![img](./scratch_img/st11.png)
 
-- In ![img](./scratch_img/st15.png), drag “**forever**” and paste it below the previous block. Block “**forever**” indicates a loop.
+- В ![img](./scratch_img/st15.png) перетащите “**навсегда**” и вставьте его под предыдущий блок. Блок “**навсегда**” указывает на цикл.
 
   ![img](./scratch_img/st20.png)
 
-- Drag an "**LED pin output**" block from ![img](./scratch_img/st16.png) and paste it in “**forever**”. Set the pin to IO27 and output level to HIGH, so that the LED pin will continue to output high level. 
+- Перетащите блок "**Вывод светодиодного вывода**" из ![img](./scratch_img/st16.png) и вставьте его в “**навсегда**”. Установите вывод на IO27, а выходной уровень - на ВЫСОКИЙ, чтобы вывод светодиода продолжал выдавать высокий уровень. 
 
 
 ![img](./scratch_img/st21.png)
 
 ![img](./scratch_img/st22-1.png)
 
-- Add a 1s delay. Duplicate the "**LED pin output**" block but set the output to LOW, and also add a delay. Then LED will light up and go off in circulation. 
+- Добавить задержку в 1 секунду. Продублируйте блок "**Вывод светодиодного вывода**", но установите выходное значение на НИЗКОЕ, а также добавьте задержку. Затем светодиод загорится и погаснет при обращении. 
 
   ![img](./scratch_img/st22.png)
 
-##### Test Result
+##### Результат теста
 
-LED blinks per second, because io27 on ESP32 board outputs high and low level alternatively every second. Besides, various interactive applications can also be realized via an LED, like breathing LED, water flow lights and flashing police light.
+Светодиод мигает каждую секунду, потому что io27 на плате ESP32 выдает высокий и низкий уровни поочередно каждую секунду. Кроме того, с помощью светодиода можно реализовать различные интерактивные приложения, такие как индикатор дыхания, индикаторы потока воды и мигающий полицейский фонарь.
 
-| Power Level | Result  |
+| Уровень мощности | Результат |
 | :---------: | :-----: |
-|    HIGH     | LED on  |
-|     LOW     | LED off |
+| ВЫСОКИЙ | светодиод включен |
+| НИЗКИЙ | светодиод выключен |
 
 
 
@@ -1572,13 +1572,13 @@ LED blinks per second, because io27 on ESP32 board outputs high and low level al
 
 
 
-##### Expansion: Breathing LED
+##### Расширение: Дышащий светодиод
 
-###### Description
+###### Описание
 
-IO interfaces of MCU (arduino UNO, ESP32 and Raspberry Pi Pico) output only digital signals (high or low level). For instance, in previous experiment (light up an LED), the digital outputs are only HIGH(3.3V) and LOW(0V).
+Интерфейсы ввода-вывода MCU (arduino UNO, ESP32 и Raspberry Pi Pico) выводят только цифровые сигналы (высокого или низкого уровня). Например, в предыдущем эксперименте (включение светодиода) цифровые выходы были только высокими (3,3 В) и низкими (0 В).
 
-If MCU outputs a high level of 3.3V or a low level of 0V, the input voltage should be at 0~3.3V. Thus, PWM (**Pulse Width Modulation**) is needed to output different voltage value, which is called "analog output".
+Если микроконтроллер выдает высокий уровень 3,3 В или низкий уровень 0 В, входное напряжение должно быть на уровне 0~3,3 В. Таким образом, ШИМ (широтно-импульсная модуляция) необходима для вывода другого значения напряжения, которое называется "аналоговый выход".
 
 ![img](./scratch_img/cou1k1.png)
 
@@ -1586,75 +1586,70 @@ If MCU outputs a high level of 3.3V or a low level of 0V, the input voltage shou
 
 
 
-###### Knowledge
+###### Знания
 
-What is PWM?
+Что такое ШИМ?
 
-PWM contains three elements: Frequency(Hz), Period, Duty Cycle(%).
+ШИМ содержит три элемента: частоту (Гц), период, рабочий цикл (%).
 
-- **PWM Frequency (f):** the times of signal changing from high to low and return to high within one second. Generally speaking, Frequency is the number of PWM Period in a second.
+- ** Частота ШИМ (f):** время изменения сигнала с высокого на низкий и возврата к высокому в течение одной секунды. Вообще говоря, частота - это количество периодов ШИМ в секунду.
 
-- **PWM Period (T):** Period = 1 / Frequency (T=1/f, and 1 means 1 second). For instance: f = 50Hz, so T = 20ms, which implies there are 50 times of Period per second.
-- **PWM Duty Cycle:** the time ratio of HIGH to the whole Period. If Period = 10ms and 8ms is pulse width time, Low level occupies 2ms, so the Duty Cycle = 8/(8+2) = 80%.
+- **Период ШИМ (T):** Период = 1 / Частота (T=1/f, а 1 означает 1 секунду). Например: f = 50 Гц, следовательно, T = 20 мс, что означает, что периодичность составляет 50 раз в секунду.
+- ** Рабочий цикл ШИМ:** отношение времени высокого уровня ко всему периоду. Если период = 10 мс и 8 мс - это длительность импульса, то низкий уровень занимает 2 мс, поэтому рабочий цикл = 8/(8+2) = 80%.
 
 ![img](./scratch_img/cou1k2.png)
 
-**Conclusion: At an appropriate signal frequency, PWM changes effective output voltage by changing the duty cycle in one period.** In plain English, within a specified time, the more high level the IO port outputs, the greater PWM value is, and the lighter LED will be. 
+**Вывод: При соответствующей частоте сигнала ШИМ изменяет эффективное выходное напряжение, изменяя рабочий цикл за один период.** Проще говоря, в течение указанного времени, чем выше уровень выходного сигнала порта ввода-вывода, тем больше значение ШИМ и тем светлее будет светодиод. 
 
 ![img](./scratch_img/cou1k3.png)
 
-###### Test Code
+###### Тестовый код
 
 ![img](./scratch_img/st23.png)
 
-- Define a variable **item** and assign it to 0.
+- Определите переменную **item** и присвойте ей значение 0.
 
   ![img](./scratch_img/st25.png)
 
-- Drag a "**forever**" block and paste a "**repeat**" block in it. Set repeat times to 255.
+- Перетащите блок "**навсегда**" и вставьте в него блок "**повторять**". Установите время повторения равным 255.
 
   ![img](./scratch_img/st26.png)
 
-- Drag a "**variable mode**" block in "**repeat**" and set the mode to “**++**”, which means **item** will increase 1 after each execution.
+- Перетащите блок "**режим переменной **" в "**повтор**" и установите режим на “**++**”, что означает, что **элемент** будет увеличиваться на 1 после каждого выполнения.
 
   ![img](./scratch_img/st27.png)
 
-- Find the block to set PWM which is contained in ![img](./scratch_img/st16.png) as shown below, so you only need to set corresponding pin and analog value to output PWM.
+- Найдите блок для настройки PWM, который содержится в ![img](./scratch_img/st16.png), как показано ниже, поэтому вам нужно только установить соответствующий вывод и аналоговое значение для вывода ШИМ.
 
   ![img](./scratch_img/st28.png)
 
-  - Set LED pin:
+  - Установить вывод светодиода:
 
     ![img](./scratch_img/st29.png)
 
-  - Set channel: (16 channels in total: including 0~15)
+  - Установить канал: (всего 16 каналов, включая 0~15)
 
     ![img](./scratch_img/st30.png)
 
-  - Set PWM output value to **item**, which will automatically add 1 from 0 to 255. **PWM output is 0~255, so we set the repeat times to 255.**
+  - Установите выходное значение ШИМ на **пункт **, что автоматически добавит 1 к значению от 0 до 255. ** Выходное значение ШИМ равно 0~255, поэтому мы устанавливаем время повторения равным 255.**
 
     ![img](./scratch_img/st31.png)
 
-- Add a delay to 0.01s, so that LED will light up gradually rather than all of a sudden. 
+- Увеличьте задержку до 0,01 секунды, чтобы светодиод загорался постепенно, а не внезапно. 
 
   ![img](./scratch_img/st32.png)
 
-- Duplicate the "**repeat**" block as follows, but set mode to "**－－**", which decreases variable **item** each time. And LED will dim gradually. 
+- Продублируйте блок "**repeat**" следующим образом, но установите режим "**--**", который каждый раз уменьшает значение переменной **item**. И светодиод будет постепенно тускнеть. 
 
   ![img](./scratch_img/st33.png)
 
 
 
-###### Test Result
+###### Результат теста
 
-LED lights up and dims gradually; it breathes evenly. 
+Светодиод загорается и постепенно гаснет; он равномерно "дышит". 
 
 ![img](./scratch_img/st34.gif)
-
-
-
-------
-
 
 
 #### A Button
