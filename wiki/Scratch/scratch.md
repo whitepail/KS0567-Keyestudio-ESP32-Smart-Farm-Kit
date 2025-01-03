@@ -3257,13 +3257,13 @@ LCD 1602 оснащен стандартным 14-контактным инте�
 
 
 
-#### Fan Module
+#### Модуль вентилятора
 
-##### Description
+##### Описание
 
-130 Motor is able to adjust speed via PWM. In the process, two pins are needed to be connected for controlling. 
+Двигатель 130 может регулировать скорость вращения с помощью ШИМ. Для управления необходимо подключить два контакта. 
 
-The module is suitable for multiple applications, such as computer heat dissipation and industrial production. What's more it is compact and easy to install, which is very practical.
+Модуль подходит для различных применений, таких как рассеивание тепла компьютером и промышленное производство. Более того, он компактен и прост в установке, что очень практично.
 
 ![img](./scratch_img/cou710.png)
 
@@ -3271,7 +3271,7 @@ The module is suitable for multiple applications, such as computer heat dissipat
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
 ![img](./scratch_img/cou712.png)
 
@@ -3281,11 +3281,11 @@ The module is suitable for multiple applications, such as computer heat dissipat
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the motor to io18 and io19.**
+**Подключите двигатель к io18 и io19.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj73.png)
 
@@ -3295,25 +3295,25 @@ The module is suitable for multiple applications, such as computer heat dissipat
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Set fan pin **INA**
+- Установите контакт вентилятора **INA**
 
   ![img](./scratch_img/st96.png)
 
-- Set the power level state of **INA**, which determines the rotation direction of fan.
+- Установите уровень мощности **INA**, который определяет направление вращения вентилятора.
 
   ![img](./scratch_img/st97.png)
 
-- Set fan pin **INB**.
+- Установить контакт вентилятора **INB**.
 
   ![img](./scratch_img/st98.png)
 
-- Set the analog output at **INB**, which decides the rotation speed. 
+- Установите аналоговый выход на значение **INB**, которое определяет скорость вращения. 
 
-  - When INA is at high, the lower the analog output at INB is, the faster the fan will rotate. 
+  - При высоком значении INA, чем ниже аналоговый выход на INB, тем быстрее будет вращаться вентилятор. 
 
-  - When INA is at low, the greater the analog output at INB is, the faster the fan will rotate. 
+  - При низком значении INA, чем больше аналоговый выход на INB, тем быстрее будет вращаться вентилятор. 
 
     ![img](./scratch_img/st99.png)
 
@@ -3321,15 +3321,15 @@ The module is suitable for multiple applications, such as computer heat dissipat
 
 
 
-##### Test Result
+##### Результат теста
 
-130 motor alternatively rotates left and right every 2 seconds.
+130 двигатель попеременно поворачивается влево и вправо каждые 2 секунды.
 
 ![img](./scratch_img/cou79.png)
 
-**NOTE: **
+**ПРИМЕЧАНИЕ: **
 
-**Intermittent stops exist during changing directions of rotation. They prevent an excessive current at the moment of reversal. Otherwise, a forced reset may occur due to insufficient power supply on the development board.**
+**При смене направления вращения возможны периодические остановки. Они предотвращают чрезмерный ток в момент переключения. В противном случае может произойти принудительный сброс настроек из-за недостаточного питания платы разработки.**
 
 
 
@@ -3337,13 +3337,13 @@ The module is suitable for multiple applications, such as computer heat dissipat
 
 
 
-#### Temperature Control System
+#### Система контроля температуры
 
-##### Description
+##### Описание
 
-Herein, we read the value of the DHT11 temperature and humidity sensor through monobus communication, and the values will be displayed on the LCD. If values exceed the set threshold, the fan will turn on for dehumidification and cooling to protect the animals and plants in the farm. Remarkably, this system is easy to install with multiple functions, such as speed controlling via PWM and data transmission by monobus. 
+Здесь мы считываем значения с датчика температуры и влажности DHT11 по шине monobus, и эти значения отображаются на ЖК-дисплее. Если значения превышают установленный порог, включается вентилятор для осушения и охлаждения, чтобы защитить животных и растения на ферме. Примечательно, что эта система проста в установке и обладает множеством функций, таких как регулирование скорости с помощью PWM и передача данных по монобусе. 
 
-Overall, it is a practical system that helps farmers monitor and control the real-time status to improve production efficiency.
+В целом, это практичная система, которая помогает фермерам отслеживать и контролировать состояние производства в режиме реального времени для повышения эффективности производства.
 
 
 
@@ -3351,13 +3351,13 @@ Overall, it is a practical system that helps farmers monitor and control the rea
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-- **Connect the temperature and humidity sensor to io17.**
-- **Connect motor(fan) modue to io18 and io19**
-- **Connect LCD1602 to BUS I2C.**
+- **Подключите датчик температуры и влажности к io17.**
+- **Подключите режим двигателя (вентилятора) к io18 и io19**
+- **Подключите ЖК-дисплей 1602 к шине I2C.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj74.png)
 
@@ -3367,76 +3367,76 @@ Overall, it is a practical system that helps farmers monitor and control the rea
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow: 
+Последовательность выполнения кода: 
 
 ![img](./scratch_img/flo7.png)
 
 
 
-Code:
+Код:
 
-- Initialize LCD to set an address, and clear the display. Turn on its backlight and set cursor position: 
+- Инициализируйте ЖК-дисплей, чтобы задать адрес, и очистите дисплей. Включите подсветку и установите положение курсора: 
 
   ![img](./scratch_img/st100.png)
 
-- Initialize the DHT11 sensor and choose a corresponding pin. Define two variables as temperature and humidity values. 
+- Инициализируйте датчик DHT11 и выберите соответствующий вывод. Определите две переменные в качестве значений температуры и влажности. 
 
   ![img](./scratch_img/st101.png)
 
-- In the loop, respectively assign the detected values to the two variables.
+- В цикле, соответственно, присвоить обнаруженные значения двум переменным.
 
   ![img](./scratch_img/st102.png)
 
-- Display the values on LCD.
+- Отобразить значения на ЖК-дисплее.
 
   ![img](./scratch_img/st103.png)
 
-- Determine the temperature and humidity value. if temperature is higher than 29° or humidity exceeds 80, fan will rotate. 
+- Определяет значение температуры и влажности. если температура превышает 29° или влажность превышает 80°, вентилятор начнет вращаться. 
 
   ![img](./scratch_img/st104.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st105.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-When the temperature reaches 29°C, the fan will turn on to dissipate heat. When it is lower than 29°C, the fan will turn off (the fan just simulates heat dissipation, so the effect is not good), which saves energy for the farm.
-
-
-
-------
-
-
-
-
-
-#### FAQ
-
-###### Q: Is temperature and humidty sensor waterproof?
-
-A: No. It detects the ambient temperature and humidity (in the air), so please do not put it in water. 
-
-------
-
-###### Q: ESP32 board is reset when fan rotates.
-
-A: When fan rotates, more current is required than other sensors, hence voltage and current may fluctuate in the circuit. Especially at the moment of fan reversal, fluctuations may be too heavy, resulting in a reset due to extremely low voltage and current in ESP32 development board.
+Когда температура достигнет 29°C, вентилятор включится для отвода тепла. При температуре ниже 29°C вентилятор выключится (вентилятор просто имитирует отвод тепла, поэтому эффект не очень хороший), что позволяет экономить энергию на ферме.
 
 
 
 ------
 
-### Project 8: Soil Humidity Monitoring System
+
+
+
+
+#### Часто задаваемые вопросы
+
+###### Вопрос: Является ли датчик температуры и влажности водонепроницаемым?
+
+О: Нет. Он определяет температуру и влажность окружающей среды (в воздухе), поэтому, пожалуйста, не опускайте его в воду. 
 
 ------
 
-***Pay attention! Do not overflow water from plastic pools in experiments. Spilling water on other sensors may cause not only a short circuit or modules to be out of work but also heat generation and even explosion. Do be extra careful! Especially for younger users, please operate with your parents. To guarantee security, please obey guidances and safety regulations.*** 
+###### Вопрос: Плата ESP32 сбрасывается при вращении вентилятора.
+
+О: При вращении вентилятора требуется больший ток, чем при работе других датчиков, поэтому напряжение и ток в цепи могут колебаться. Особенно в момент включения вентилятора колебания могут быть слишком сильными, что приведет к сбросу из-за чрезвычайно низкого напряжения и тока в плате разработки ESP32.
+
+
+
+------
+
+### Проект 8: Система мониторинга влажности почвы
+
+------
+
+***Будьте внимательны! Во время экспериментов не переливайте воду из пластиковых емкостей. Попадание воды на другие датчики может привести не только к короткому замыканию или выходу из строя модулей, но и к выделению тепла и даже взрыву. Будьте особенно осторожны! Особенно для маленьких пользователей, пожалуйста, работайте вместе с родителями. Для обеспечения безопасности, пожалуйста, соблюдайте инструкции и правила техники безопасности.*** 
 
 ------
 
@@ -3446,7 +3446,7 @@ A: When fan rotates, more current is required than other sensors, hence voltage 
 
 
 
-#### Flow Diagram
+#### Технологическая схема
 
 ![image-20230607161101154](./scratch_img/image-20230607161101154.png)
 
@@ -3456,11 +3456,11 @@ A: When fan rotates, more current is required than other sensors, hence voltage 
 
 
 
-#### Soil Humidity Sensor
+#### Датчик влажности почвы
 
-##### Description
+##### Описание
 
-Soil humidity sensors are mainly used to measure water content in volumetric soil, monitor soil moisture, irrigate crops and protect forests. This kind of sensor is integrated in agricultural irrigation system to supply water regularly and efficiently, which optimize irrigation for a best plant growth.
+Датчики влажности почвы в основном используются для измерения содержания воды в почве, мониторинга влажности почвы, орошения сельскохозяйственных культур и защиты лесов. Датчики такого типа встраиваются в сельскохозяйственные ирригационные системы для регулярной и эффективной подачи воды, что оптимизирует орошение для наилучшего роста растений.
 
 ![img](./scratch_img/cou81.png)
 
@@ -3468,9 +3468,9 @@ Soil humidity sensors are mainly used to measure water content in volumetric soi
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
-![img](./scratch_img/couy81.png)
+![img](./scratch_img/cou81.png)
 
 
 
@@ -3478,11 +3478,11 @@ Soil humidity sensors are mainly used to measure water content in volumetric soi
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the soil humidity sensor to io32.**
+**Подключите датчик влажности почвы к io32.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj81.png)
 
@@ -3490,28 +3490,28 @@ Soil humidity sensors are mainly used to measure water content in volumetric soi
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Initialize the serial port.
+- Инициализация последовательного порта.
 
   ![img](./scratch_img/st106.png)
 
-- Print the read sensor value.
+- Выведите значение, считанное датчиком.
 
   ![img](./scratch_img/st107.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st108.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-Open the serial monitor.
+Откройте последовательный монитор.
 
-Touch the detection area of the sensor with a wet finger and the currently detected humidity value will be printed on the monitor (range: 0~4095).
+Прикоснитесь влажным пальцем к области обнаружения датчика, и на мониторе отобразится текущее значение влажности (диапазон: 0~4095).
 
 ![img](./scratch_img/st109.png)
 
@@ -3519,19 +3519,19 @@ Touch the detection area of the sensor with a wet finger and the currently detec
 
 
 
-#### Soil Humidity Monitoring System
+#### Система мониторинга влажности почвы
 
-We adopt LCD1602 to reveal the real-time value of soil humidity value. When the value is lower than the set minimum humidity, the buzzer will emit sound to prompt farmers of irrigation. 
+Мы используем ЖК-дисплей LCD1602 для отображения значения влажности почвы в режиме реального времени. Когда значение влажности ниже установленного минимума, раздается звуковой сигнал, предупреждающий фермеров о необходимости полива. 
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-- **Connect the soil humidity sensor to io32.**
-- **Connect the buzzer to io16.**
-- **Connect the LCD1602 to BUS I2C.**
+- **Подключите датчик влажности почвы к io32.**
+- **Подключите звуковой сигнал к io16.**
+- **Подключите ЖК-дисплей 1602 к шине I2C.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj82.png)
 
@@ -3539,70 +3539,70 @@ We adopt LCD1602 to reveal the real-time value of soil humidity value. When the 
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow: 
+Последовательность выполнения кода: 
 
 ![img](./scratch_img/flo8.png)
 
 
 
-Code: 
+Код: 
 
-- Initialize LCD and clear its display. Turn on the back light to observe the displayed value.
+- Инициализируйте ЖК-дисплей и очистите его отображение. Включите подсветку, чтобы увидеть отображаемое значение.
 
   ![img](./scratch_img/st110.png)
 
-- Initialize the serial port and define a variable. 
+- Инициализируйте последовательный порт и задайте переменную. 
 
   ![img](./scratch_img/st111.png)
 
-- Read the value of the soil humidity value and assign it to the variable. LCD shows the value. 
+- Считывает значение влажности почвы и присваивает его переменной. На ЖК-дисплее отображается значение. 
 
   ![img](./scratch_img/st112.png)
 
-- Determine the read value. If it is lower than 200, the buzzer will alarm. 
+- Определяет значение считывания. Если оно меньше 200, раздастся звуковой сигнал. 
 
   ![img](./scratch_img/st113.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st114.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-When the value detected by the soil humidity sensor is lower than the set threshold, the buzzer emits sound to alarm. 
-
-
-
-------
-
-
-
-#### FAQ
-
-##### Q: Is soil humidity sensor waterproof?
-
-A: With the exception of the detection area, the sensor is not waterproof. Spilling water on other area may result in a short circuit.
+Когда значение, определяемое датчиком влажности почвы, оказывается ниже установленного порогового значения, раздается звуковой сигнал тревоги. 
 
 
 
 ------
 
-### Project 9: Water Level Monitoring System
+
+
+#### Часто задаваемые вопросы
+
+##### Вопрос: Является ли датчик влажности почвы водонепроницаемым?
+
+О: За исключением зоны обнаружения, датчик не является водонепроницаемым. Попадание воды на другие участки может привести к короткому замыканию.
+
+
 
 ------
 
-***Pay attention! Do not overflow water from plastic pools in experiments. Spilling water on other sensors may cause not only a short circuit to disturb normal operations but also heat generation and even explosion. Do be extra careful! Especially for younger users, please operate with your parents. To guarantee security, please obey guidances and safety regulations.***
+### Проект 9: Система контроля уровня воды
+
+------
+
+***Будьте внимательны! Во время экспериментов не переливайте воду из пластиковых бассейнов. Попадание воды на другие датчики может привести не только к короткому замыканию, нарушающему нормальную работу, но и к выделению тепла и даже взрыву. Будьте особенно осторожны! Специально для маленьких пользователей, пожалуйста, работайте вместе с родителями. Для обеспечения безопасности, пожалуйста, соблюдайте инструкции и правила техники безопасности.***
 
 ------
 
 
 
-#### Flow Diagram
+#### Технологическая схема
 
 ![image-20230607165214387](./scratch_img/image-20230607165214387.png)
 
@@ -3612,17 +3612,17 @@ A: With the exception of the detection area, the sensor is not waterproof. Spill
 
 
 
-#### Water Level Sensor
+#### Датчик уровня воды
 
-##### Description
+##### Описание
 
-The water level sensor is easy to use, portable and cost effective. It integrates a series of exposed parallel lines to measure the volume of water and droplets. Not only is the sensor smaller and smarter than other water detectors, but it also features:
+Датчик уровня воды прост в использовании, портативен и экономичен. Он включает в себя ряд открытых параллельных линий для измерения объема воды и капель. Этот датчик не только меньше и умнее других детекторов воды, но и оснащен:
 
 
-- Smooth transition between water volume and analog volume;
-- Strong flexibility. The sensor outputs basic analog values;
-- Low power consumption and high sensitivity;
-- Directly connect to microprocessors or circuits, and is suitable for various development boards and controllers, such as Arduino controllers, STC and AVR single-chip microcomputers.
+- Плавный переход между объемом воды и аналоговым объемом;
+- Высокая гибкость. Датчик выдает основные аналоговые значения;
+- Низкое энергопотребление и высокая чувствительность;
+- Напрямую подключается к микропроцессорам или схемам и подходит для различных плат разработки и контроллеров, таких как контроллеры Arduino, однокристальные микрокомпьютеры STC и AVR.
 
 ![img](./scratch_img/cou91.png)
 
@@ -3632,11 +3632,11 @@ The water level sensor is easy to use, portable and cost effective. It integrate
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Connect the water level sensor to io33.**
+**Подключите датчик уровня воды к io33.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: желтый цвет подключите к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj91.png)
 
@@ -3646,17 +3646,17 @@ The water level sensor is easy to use, portable and cost effective. It integrate
 
 
 
-##### Test Code
+##### Тестовый код
 
 ![img](./scratch_img/st115.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-Open the serial monitor.
+Откройте последовательный монитор.
 
-Touch the detection area of the sensor with a wet finger and the currently detected value will be printed on the monitor (range: 0~4095).
+Прикоснитесь влажным пальцем к области обнаружения датчика, и на мониторе отобразится текущее значение (диапазон: 0~4095).
 
 ![img](./scratch_img/st116.png)
 
@@ -3666,19 +3666,19 @@ Touch the detection area of the sensor with a wet finger and the currently detec
 
 
 
-#### Water Level Monitoring System
+#### Система контроля уровня воды
 
-The water level monitoring system supervises the change of water level to clarify problems in time and take measures to avoid disasters. It is widely used in water conservancy projects, urban drainage and environmental monitoring.
+Система мониторинга уровня воды отслеживает изменение уровня воды, чтобы своевременно выявлять проблемы и принимать меры во избежание стихийных бедствий. Она широко используется в проектах по охране водных ресурсов, городском дренаже и мониторинге окружающей среды.
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-- **Connect the water level sensor to io33.**
-- **Connect the buzzer to io16.**
-- **Connect the LCD1602 to BUS I2C.**
+- **Подключите датчик уровня воды к io33.**
+- **Подключите зуммер к io16.**
+- **Подключите ЖК-дисплей 1602 к шине I2C.**
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj92.png)
 
@@ -3688,42 +3688,42 @@ The water level monitoring system supervises the change of water level to clarif
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow: 
+Последовательность выполнения кода: 
 
 ![img](./scratch_img/flo9.png)
 
 
 
-Code: 
+Код: 
 
-- Initialize the LCD and turn on its back light; clear all display and then print water level. 
+- Инициализируйте ЖК-дисплей и включите его заднюю подсветку; очистите все дисплеи, а затем выведите уровень воды. 
 
   ![img](./scratch_img/st117.png)
 
-- Define a variable as the detected water level. 
+- Определяет переменную в качестве измеряемого уровня воды. 
 
   ![img](./scratch_img/st118.png)
 
-- Read the sensor value and display it on LCD. 
+- Считайте показания датчика и отображайте их на ЖК-дисплее. 
 
   ![img](./scratch_img/st119.png)
 
-- Determine the water level value. If it is greater than 2000, the buzer will alarm. 
+- Определите уровень воды. Если он превысит 2000, прибор подаст сигнал тревоги. 
 
   ![img](./scratch_img/st120.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st121.png)
 
 
 
-##### Test Result
+##### Результат теста
 
-LCD displays the real-time value of water level. In the experiment, we cover the detection area with water to stimulate the water level. When the detected value exceeds the threshold, the buzzer starts to alarm.
+На ЖК-дисплее отображается значение уровня воды в реальном времени. В ходе эксперимента мы залили водой область обнаружения, чтобы повысить уровень воды. Когда обнаруженное значение превышает пороговое значение, включается звуковой сигнал.
 
 
 
@@ -3731,23 +3731,23 @@ LCD displays the real-time value of water level. In the experiment, we cover the
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: Is water level sensor waterproof?
+##### Вопрос: Является ли датчик уровня воды водонепроницаемым?
 
-A: With the exception of the detection area, the sensor is not waterproof. Spilling water on other area may result in a short circuit.
-
-------
-
-### Project 10: Auto-Irrigation System
+О: Датчик не является водонепроницаемым, за исключением зоны обнаружения. Попадание воды на другие участки может привести к короткому замыканию.
 
 ------
 
-***Pay attention! Do not overflow water from plastic pools in experiments. Spilling water on other sensors may cause not only a short circuit to disturb normal operations but also heat generation and even explosion. Do be extra careful! Especially for younger users, please operate with your parents. To guarantee security, please obey guidances and safety regulations.***
+### Проект 10: Система автоматического орошения
 
 ------
 
-In this project, we stimulate irrigation via a water pump controlled by a relay module. Besides, we also determine whether there is water in the pool through water level sensor, and detect the soil humidity by soil humidity sensor. In this way, the system will be more intelligent in controlling the water pump.
+***Будьте внимательны! Во время экспериментов не переливайте воду из пластиковых бассейнов. Попадание воды на другие датчики может привести не только к короткому замыканию, нарушающему нормальную работу, но и к выделению тепла и даже взрыву. Будьте особенно осторожны! Особенно маленьких пользователей просят работать вместе с родителями. Для обеспечения безопасности соблюдайте инструкции и правила техники безопасности.***
+
+------
+
+В этом проекте мы стимулируем орошение с помощью водяного насоса, управляемого релейным модулем. Кроме того, мы также определяем наличие воды в бассейне с помощью датчика уровня воды и определяем влажность почвы с помощью датчика влажности почвы. Таким образом, система будет более интеллектуальной в управлении водяным насосом.
 
 ![img](./scratch_img/cout10.png)
 
@@ -3757,7 +3757,7 @@ In this project, we stimulate irrigation via a water pump controlled by a relay 
 
 
 
-#### Flow Diagram
+#### Блок-схема
 
 ![image-20230607183214310](./scratch_img/image-20230607183214310.png)
 
@@ -3767,13 +3767,13 @@ In this project, we stimulate irrigation via a water pump controlled by a relay 
 
 
 
-#### Water Pumping System
+#### Насосная система для перекачки воды
 
-##### Description
+##### Описание
 
-In this experiment, we use ESP32 development board to turn on/off the water pump by a relay module. A pump lifts water and transports liquids, and usually is combined with a relay module in usage.
+В этом эксперименте мы использовали плату разработки ESP32 для включения/ выключения водяного насоса с помощью релейного модуля. Насос поднимает воду и транспортирует жидкости и обычно используется в сочетании с релейным модулем.
 
-Herein, we connect the relay module and the pump to the ESP32 board, and program to remotely turn on or off the pump through switching the state of relay. For how, we determine the state of relay according to the output value of the module or a preset time.
+Здесь мы подключаем релейный модуль и насос к плате ESP32 и программируем удаленное включение или выключение насоса, переключая состояние реле. Как это сделать, мы определяем состояние реле в соответствии с выходным значением модуля или заданным временем.
 
 
 
@@ -3781,20 +3781,20 @@ Herein, we connect the relay module and the pump to the ESP32 board, and program
 
 
 
-**Relay Module:**
+**Релейный модуль:**
 
-In usage, it is often used in the management of high voltage and load current, say, motors, high-current sensors and high-power lights. 
+На практике он часто используется для управления высоким напряжением и током нагрузки, например, в двигателях, сильноточных датчиках и мощных лампах. 
 
 ![img](./scratch_img/cou101.png)
 
-- **Normally Open (NO):** This pin is normally open, unless a signal is received by the signal pin of the relay. Therefore, common pins are disconnected via NC pin and connected through NO pin.
+- **Нормально разомкнут (НЕТ):** Этот вывод обычно разомкнут, если только сигнал не поступает на сигнальный вывод реле. Таким образом, общие контакты отсоединяются через вывод NC и не подключаются ни к какому выводу.
 
-- **Common Contact (COM):** This pin connects to other modules, for example, water pump. 
-  - Water Pump: 
+- **Общий контакт (COM):** Этот контакт подключается к другим модулям, например, к водяному насосу. 
+  - Водяной насос: 
 
 ![img](./scratch_img/cou1011.png)
 
-- **Normally Closed (NC):** NC pin is linked with COM pin to form a closed circuit. It uses ESP32 board to control the closure and the disconnection of the relay module.
+- **Нормально замкнутый (NC): ** Вывод NC соединен с выводом COM, образуя замкнутую цепь. Для управления замыканием и разъединением модуля реле используется плата ESP32.
 
 
 
@@ -3802,16 +3802,16 @@ In usage, it is often used in the management of high voltage and load current, s
 
 
 
-**Parameters:**
+**Параметры:**
 
-- Power voltage: 5V
-- Static current: 2mA
-- Maximum contact voltage: 250VAC/30VDC
-- Maximum current: 10A
+- Напряжение питания: 5 В
+- Статический ток: 2 мА
+- Максимальное напряжение на контактах: 250 В переменного тока/30 В постоянного тока
+- Максимальный ток: 10 А
 
 
 
-**Schematic Diagram:**
+**Принципиальная схема:**
 
 ![img](./scratch_img/couy101.png)
 
@@ -3821,9 +3821,9 @@ In usage, it is often used in the management of high voltage and load current, s
 
 
 
-##### Wiring Diagram
+##### Схема подключения
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj101.png)
 
@@ -3833,31 +3833,17 @@ In usage, it is often used in the management of high voltage and load current, s
 
 
 
-##### Test Code
+##### Тестовый код
 
 ![img](./scratch_img/st122.png)
 
 
 
-##### Test Result
+##### Результат тестирования
 
-After uploading code, the device will pump water once. 
+После загрузки кода устройство начнет откачивать воду один раз. 
 
-In this experiment, the water pump is automatized, reducing time and efforts of manual operation and improving efficiency. Therefore, this water pumping system is wildly used in agricultural production and water treatment. 
-
-
-
-------
-
-
-
-#### Auto-Irrigation System
-
-##### Description
-
-In this experiment, we implement a smart irrigation system by a soil humidity sensor, a water level sensor, a relay module and a water pump. We connect the two sensors on ESP32 development board and program to read their output values to control the relay and water pump. 
-
-If the soil is very dry, the relay will turn on to control the water pump to irrigate plants; And if the water level is too low, the water pump will not be able to work, and the buzzer will alarm. In this way, plant watering and water level controlling are automatized, which raises production efficiency and reduces the time and efforts of manual operations.
+В этом эксперименте водяной насос автоматизирован, что сокращает время и усилия при ручном управлении и повышает эффективность. Поэтому эта система откачки воды широко используется в сельскохозяйственном производстве и при очистке воды. 
 
 
 
@@ -3865,16 +3851,30 @@ If the soil is very dry, the relay will turn on to control the water pump to irr
 
 
 
-##### Wiring Diagram
+#### Система автоматического орошения
 
-- **Connect the relay module to io25; connect its NC pin to the GND(black) at io2.**
-- **Water pump:**
-  - **Connect the red wire to POWER 3V3 of the board**
-  - **Connect the black wire(GND) to the COM pin of the relay**
-- **Connect the soil humidity sensor to io32**
-- **Connect the water level sensor to io33**
+##### Описание
 
-**Attention: Connect yellow to S(Signal), red to V(Power), and black to GND. Do not reverse them!**
+В этом эксперименте мы реализовали интеллектуальную систему орошения, состоящую из датчика влажности почвы, датчика уровня воды, релейного модуля и водяного насоса. Мы подключаем два датчика к плате разработки ESP32 и программируем считывание их выходных значений для управления реле и водяным насосом. 
+
+Если почва очень сухая, включится реле для управления водяным насосом для орошения растений; а если уровень воды слишком низкий, водяной насос не сможет работать, и раздастся звуковой сигнал. Таким образом, полив растений и контроль уровня воды автоматизированы, что повышает эффективность производства и сокращает время и усилия, затрачиваемые на ручные операции.
+
+
+
+------
+
+
+
+##### Схема подключения
+
+- **Подключите модуль реле к io25; подключите его вывод NC к GND (черный) на io2.**
+- **Водяной насос:**
+  - **Подключите красный провод к источнику питания 3В3 платы**
+  - **Подсоедините черный провод (GND) к контакту COM реле**
+- **Подсоедините датчик влажности почвы к io32**
+- **Подсоедините датчик уровня воды к io33**
+
+**Внимание: Подключите желтый цвет к S (сигнал), красный - к V (питание), а черный - к GND. Не меняйте их местами!**
 
 ![img](./scratch_img/couj102.png)
 
@@ -3884,90 +3884,90 @@ If the soil is very dry, the relay will turn on to control the water pump to irr
 
 
 
-##### Test Code
+##### Тестовый код
 
-Code Flow:
+Последовательность выполнения кода:
 
 ![img](./scratch_img/flo10.png)
 
 
 
-Code:
+Код:
 
-- Initialize and clear the LCD, turn on the LCD back light. Define two variables as the detected sensor values. 
+- Инициализируйте и очистите ЖК-дисплей, включите подсветку ЖК-дисплея. Определите две переменные в качестве значений, определяемых датчиком. 
 
   ![img](./scratch_img/st123.png)
 
-- Assign the two read sensor values to those variables. 
+- Присвоить этим переменным два считанных значения датчика. 
 
   ![img](./scratch_img/st124.png)
 
-- Display these values on LCD.
+- Отобразить эти значения на ЖК-дисплее.
 
   ![img](./scratch_img/st125.png)
 
-- If the water level value is lower than 700 or the soil humidity value is less than 1200, the buzzer will alarm. 
+- Если значение уровня воды ниже 700 или влажности почвы ниже 1200, сработает звуковой сигнал. 
 
   ![img](./scratch_img/st126.png)
 
-- When the soil humidity value is lower than 1200 but the water level value is greater than 700, the water pump will automatically irrigate the farm. 
+- Если влажность почвы ниже 1200, но уровень воды превышает 700, водяной насос автоматически оросит ферму. 
 
   ![img](./scratch_img/st127.png)
 
 
-Complete code:
+Полный код:
 
 ![img](./scratch_img/st128.png)
 
 
 
-##### Test Result
+##### Результат теста
 
 ![img](./scratch_img/cou102.png)
 
-- LCD 1602 will display the current values of soil humidity and water level. When the detected humidity is lower than the set threshold, it implies that the soil is being arid, and irrigation starts automatically.
-- When the detected water level is lower than the set threshold, the water pumping system doesn't work, and the buzzer alarms to notify that water is insufficient. 
-- Press the button to stop alarming.
+- На ЖК-дисплее 1602 будут отображаться текущие значения влажности почвы и уровня воды. Если обнаруженная влажность ниже установленного порога, это означает, что почва засушливая, и полив начинается автоматически.
+- Когда обнаруженный уровень воды ниже установленного порогового значения, система откачки воды не работает, и звуковой сигнал предупреждает о недостаточном количестве воды. 
+- Нажмите кнопку, чтобы отключить подачу сигнала тревоги.
 
 
 
 ------
 
-**To sum up, we have achieved an analog auto-irrigation system in this project, which intelligently controls the on and off of the water pump according to the water level. In application, this system usually goes for household and agricultural production.**
+** Подводя итог, можно сказать, что в этом проекте мы создали аналоговую систему автоматического орошения, которая интеллектуально управляет включением и выключением водяного насоса в зависимости от уровня воды. Обычно эта система используется в домашнем хозяйстве и сельском хозяйстве.**
 
 ------
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: Are the modules waterproof?
+##### Вопрос: Являются ли модули водонепроницаемыми?
 
-A: The relay module is not, yet the water pump is. The waterproof grade of the water pump is IP68.
+A: Релейный модуль нет, но водяной насос есть. Степень водонепроницаемости водяного насоса - IP68.
 
 ------
 
-##### Q: ESP32 board is reset when the water pump works.
+##### Вопрос: Плата ESP32 сбрасывается, когда водяной насос работает.
 
-A: When water pump works, more current is required than other modules, hence voltage and current may fluctuate in the circuit. Sometimes fluctuations may be too heavy, resulting in a reset due to extremely low voltage and current in ESP32 development board.
+О: При работе водяного насоса требуется больший ток, чем при работе других модулей, поэтому напряжение и ток в цепи могут колебаться. Иногда колебания могут быть слишком сильными, что приводит к сбросу из-за чрезвычайно низкого напряжения и тока в плате разработки ESP32.
 
-When operating the water pump, please follow the example code:
+При работе с водяным насосом, пожалуйста, следуйте приведенному в примере коду:
 
 ![img](./scratch_img/st127.png)
 
 ------
 
-##### Q: Fail to pump water?
+##### Вопрос: Не удается откачать воду?
 
-A: Several pumping operations are required to fill the water pump before using it. These initial pumpings do not actually draw the water, but to introduce sufficient water into the pump. Only after the pump is full can water be carried out. So we are first for filling, not pumping.	
-
-------
-
-### Project 11: WIFI Control Smart Farm
+О: Для заполнения водяного насоса перед его использованием требуется выполнить несколько операций по откачке воды. Эти первоначальные операции по откачке воды на самом деле не предназначены для забора воды, а для подачи достаточного количества воды в насос. Только после того, как насос заполнен, можно подавать воду. Таким образом, мы в первую очередь занимаемся наполнением, а не откачиванием.
 
 ------
 
-***Pay attention! Do not overflow water from plastic pools in experiments. Spilling water on other sensors may cause a short circuit or modules to be out of work. If batteries get wet, even explosion may occur. Do be extra careful! For younger users, please operate with your parents. To guarantee security, please obey guidances and safety regulations.***
+### Проект 11: Интеллектуальная ферма с Wi-FI управлением
+
+------
+
+***Будьте внимательны! Не переливайте воду из пластиковых бассейнов во время экспериментов. Попадание воды на другие датчики может привести к короткому замыканию или выходу из строя модулей. Если батареи намокнут, может произойти даже взрыв. Будьте особенно осторожны! Для маленьких пользователей, пожалуйста, работайте с родителями. Для обеспечения безопасности, пожалуйста, соблюдайте инструкции и правила техники безопасности.***
 
 ------
 
@@ -3977,7 +3977,7 @@ A: Several pumping operations are required to fill the water pump before using i
 
 
 
-#### Flow Diagram
+#### Блок-схема
 
 ![image-20230608105334194](./scratch_img/image-20230608105334194.png)
 
@@ -3985,22 +3985,22 @@ A: Several pumping operations are required to fill the water pump before using i
 
 
 
-#### WIFI Web Page Display
+#### Отображение веб-страницы по WI-FI
 
-##### Description
+##### Описание
 
-ESP32 board is equipped with Wi-Fi(2.4G) and Bluetooth(4.2), which enable it to easily connect to WiFi and communicate with other devices on the network. What's more, web pages can be displayed in browsers via ESP32.
+Плата ESP32 оснащена Wi-Fi (2.4G) и Bluetooth (4.2), которые позволяют ей легко подключаться к Wi-Fi и взаимодействовать с другими устройствами в сети. Более того, веб-страницы могут отображаться в браузерах с помощью ESP32.
 
 ![img](./scratch_img/cou111.png)
 
-**Arduino IDE provides you wih library file <WiFi.h>, which support Wi-Fi configurations and ESP32 Wi-Fi networking monitoring.**
+**Arduino IDE предоставляет вам файл библиотеки <WiFi.h>, который поддерживает настройки Wi-Fi и мониторинг сети Wi-Fi ESP32.**
 
-- **Base station mode** (STA or Wi-Fi client-side mode): In this mode, ESP32 connects to the Wi-Fi hotspot (AP).
-- **AP mode** (Soft-AP or Wi-Fi hotspot mode): In this mode, other Wi-Fi devices connect to ESP32.
-- **AP-STA mode**: In this mode, ESP32 is a Wi-Fi hotspot as well as a Wi-Fi device connecting to another Wi-Fi hotspot.
-- These modes is compatible with multiple safe modes, like WPA, WPA2 and WEP.
-- It is able to scan for Wi-Fi hotspot, including active and passive scan.
-- It supports promiscuous mode to monitor IEEE802.11 Wi-Fi Packets.
+- **Режим базовой станции** (STA или режим на стороне клиента Wi-Fi): В этом режиме ESP32 подключается к точке доступа Wi-Fi (AP).
+- **Режим точки доступа (Soft-AP или режим точки доступа Wi-Fi): В этом режиме другие устройства Wi-Fi подключаются к ESP32.
+- ** Режим AP-STA**: В этом режиме ESP32 является точкой доступа Wi-Fi, а также устройством Wi-Fi, подключающимся к другой точке доступа Wi-Fi.
+- Эти режимы совместимы с несколькими безопасными режимами, такими как WPA, WPA2 и WEP.
+- Он способен сканировать точки доступа Wi-Fi, включая активное и пассивное сканирование.
+- Он поддерживает беспорядочный режим для мониторинга пакетов Wi-Fi стандарта IEEE802.11.
 
 
 
@@ -4008,11 +4008,11 @@ ESP32 board is equipped with Wi-Fi(2.4G) and Bluetooth(4.2), which enable it to 
 
 
 
-For wifi details, please refer to: 
+Для получения подробной информации о Wi-Fi, пожалуйста, обратитесь к: 
 
 [https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_wifi.html](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/network/esp_wifi.html)
 
-ESPRESSIF official website: [https://www.espressif.com.cn/en/home](https://www.espressif.com.cn/en/home)
+Официальный сайт ESPRESSIF: [https://www.espressif.com.cn/en/home](https://www.espressif.com.cn/en/home)
 
 ![img](./scratch_img/cou112.png)
 
@@ -4022,60 +4022,60 @@ ESPRESSIF official website: [https://www.espressif.com.cn/en/home](https://www.e
 
 
 
-##### Import Library
+##### Импорт библиотеки
 
-- Click ![img](./scratch_img/st130.png)
+- Нажмите ![img](./scratch_img/st130.png)
 
-- Click ![st131.](./scratch_img/st131..png)to choose “**Web Page Editing PRO**”, and libraries will be loaded. 
+- Нажмите ![st131.](./scratch_img/st131..png), чтобы выбрать “**Программа для редактирования веб-страниц**”, и библиотеки будут загружены. 
 
   ![img](./scratch_img/st131.png)
 
 
 
-##### Test Code
+##### Тестовый код
 
-- Connect to the WiFi hotspot, input your SSID and password.
+- Подключитесь к точке доступа Wi-Fi, введите свой SSID и пароль.
 
   ![img](./scratch_img/st134.png)
 
-- Display IP address on LCD
+- Отобразите IP-адрес на ЖК-дисплее.
 
   ![img](./scratch_img/st135.png)
 
-- Define a web page components named temperature (unit: ℃)
+- Определяет температуру компонентов веб-страницы (единица измерения: ℃)
 
   ![img](./scratch_img/st136.png)
 
   ![img](./scratch_img/st136-1.png)
 
-- Add a button named "button"
+- Добавить кнопку с именем "кнопка"
 
   ![img](./scratch_img/st141.png)
 
   ![img](./scratch_img/st141-1.png)
 
 
-Complete code: 
+Полный код: 
 
 ![img](./scratch_img/st137.png)
 
 
 
-##### Visit the Website
+##### Посетите веб-сайт
 
-Once connected to WiFi, you can use the ESP32's web server library to serve web pages. In the following example, we will create a simple web page to display a fixed temperature information:
+После подключения к Wi-Fi вы можете использовать библиотеку веб-сервера ESP32 для обслуживания веб-страниц. В следующем примере мы создадим простую веб-страницу для отображения информации о фиксированной температуре:
 
-Last but not least, you may open the IP address in browser to visit the web page. In our example code, please input “http://[IP address of ESP32]” to visit the website.
+И последнее, но не менее важное: вы можете открыть IP-адрес в браузере, чтобы перейти на веб-страницу. В нашем примере кода, пожалуйста, введите “http://[IP-адрес ESP32]”, чтобы перейти на веб-сайт.
 
-**NOTE: When PC, mobile phones and ESP32 board are connected to one network, you can visit this website at PC and phones at the same time.**
+** ПРИМЕЧАНИЕ: Когда ПК, мобильные телефоны и плата ESP32 подключены к одной сети, вы можете посещать этот веб-сайт одновременно с ПК и телефона.**
 
-**Here is the ESP32 IP address of your own.**
+**Вот ваш собственный IP-адрес ESP32.**
 
-*PC:*
+*ПК:*
 
 ![img](./scratch_img/st132.png)
 
-*Mobile phone:*
+*Мобильный телефон:*
 
 ![img](./scratch_img/st133.png)
 
@@ -4083,23 +4083,23 @@ Last but not least, you may open the IP address in browser to visit the web page
 
 
 
-#### WIFI Control Smart Farm
+#### Управление смарт-фермой по Wi-Fi
 
-##### Code Flow
+##### Поток кода
 
 ![img](./scratch_img/flo11.png)
 
 ------
 
-Upload the code.
+Загрузите код.
 
-**SSID** and **PASSWORD** are needed to modify to your wifi name and password:
+**SSID** и **ПАРОЛЬ** необходимы для изменения вашего имени и пароля Wi-Fi:
 
 ![img](./scratch_img/st134.png)
 
 
 
-##### Complete Code
+##### Полный код
 
 ![img](./scratch_img/st138.png)
 
@@ -4107,17 +4107,17 @@ Upload the code.
 
 
 
-##### Result
+##### Результат
 
-***PC:***
+***КОМПЬЮТЕР:***
 
 ![img](./scratch_img/st140.png)
 
-***Mobile Phone:***
+***Мобильный телефон:***
 
 ![img](./scratch_img/st139.png)
 
-Input the IP address in browsers at mobile phones or PC, you can check the sensor values and control the LED and fan. 
+Введите IP-адрес в браузерах мобильных телефонов или ПК, чтобы проверить показания датчиков и управлять светодиодом и вентилятором. 
 
 
 
@@ -4125,22 +4125,22 @@ Input the IP address in browsers at mobile phones or PC, you can check the senso
 
 
 
-|    Sensor Values    | Controllable Devices |
+| Значения датчиков | Управляемые устройства |
 | :-----------------: | :------------------: |
-|   Temperature (℃)   |         LED          |
-|   Humidity (%rh)    |         Fan          |
-|   Water level (%)   |     Feeding box      |
-|    Rainfall (%)     |      Water pump      |
-| Brightness (0~4095) |                      |
-|  Soil humidity (%)  |                      |
+| Температура (℃) | Светодиод |
+| Относительная влажность (%) | Вентилятор |
+| Уровень воды (%) | Ящик для кормления |
+| Количество осадков (%) | Водяной насос |
+| Яркость (0~4095) | |
+| Влажность почвы (%) | |
 
 
 
-With the ESP32 development board, we have learned how to create a web page to display the sensor values, like temperature, humidity, water level and soil humidity, and we can also control LED lights, fans, feeding boxes and pumps. Moreover, these operations can be remotely finished through mobile phones or computers.
+С помощью платы разработки ESP32 мы научились создавать веб-страницу для отображения значений датчиков, таких как температура, влажность, уровень воды и влажность почвы, а также управлять светодиодными лампами, вентиляторами, загрузочными коробками и насосами. Более того, эти операции можно выполнять удаленно с помощью мобильных телефонов или компьютеров.
 
 ![img](./scratch_img/cou118.png)
 
-In this project, we stimulate a smart farm with intelligent and remote management. Such technology facilitates the control of equipments and improves agricultural efficiency and quality, which make Internet of Things, informatization, automation and intelligence possible.
+В этом проекте мы создаем интеллектуальную ферму с интеллектуальным и удаленным управлением. Такая технология облегчает управление оборудованием и повышает эффективность и качество сельскохозяйственной продукции, что делает возможными Интернет вещей, информатизацию, автоматизацию и интеллектуальный анализ.
 
 
 
@@ -4148,55 +4148,55 @@ In this project, we stimulate a smart farm with intelligent and remote managemen
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: Wifi always fails to be connected. 
+##### Вопрос: Wi-Fi всегда не подключается. 
 
-A: Move ESP32 to the side of the router and reboot the board, and just be patient to wait. If it still fails to connected, please check whether the WiFi name and password are correct.
-
-------
-
-##### Q: The response is slow during remote opterations on web page.
-
-A: Possible reasons: 
-
-- The router CPU resources are insufficient due to multiple connections. Please reboot the router to try a reconnection.
-- The router works for a long time. Please reboot the router.
-- Wireless interference. Wireless signal is unstable, so please do not use it through the wall. 
-
-
-
-For knowledge of routers, please Google by yourself.
+О: Отодвиньте ESP32 в сторону от маршрутизатора, перезагрузите плату и просто наберитесь терпения и подождите. Если подключение по-прежнему не удается выполнить, пожалуйста, проверьте правильность имени Wi-Fi и пароля.
 
 ------
 
-##### Q: Fail to pump water?
+##### Вопрос: При удаленных настройках на веб-странице происходит медленный отклик.
 
-A: Several pumping operations are required to fill the water pump before using it. These initial pumpings do not actually draw the water, but to introduce sufficient water into the pump. Only after the pump is full can water be carried out. So we are first for filling, not pumping.
+О: Возможные причины: 
+
+- Ресурсов процессора маршрутизатора недостаточно из-за нескольких подключений. Пожалуйста, перезагрузите маршрутизатор, чтобы попытаться повторно подключиться.
+- Маршрутизатор работает в течение длительного времени. Пожалуйста, перезагрузите маршрутизатор.
+- Беспроводные помехи. Беспроводной сигнал нестабилен, поэтому, пожалуйста, не используйте его через стену. 
+
+
+
+Чтобы узнать больше о маршрутизаторах, пожалуйста, погуглите сами.
 
 ------
 
-### Project 12: APP Control Smart Farm
+##### Вопрос: Не удается откачать воду?
+
+О: Для заполнения водяного насоса перед его использованием требуется выполнить несколько операций по откачке воды. Эти первоначальные операции по откачке воды на самом деле не предназначены для забора воды, а для подачи достаточного количества воды в насос. Только после того, как насос заполнен, можно подавать воду. Таким образом, мы в первую очередь занимаемся наполнением, а не откачиванием.
 
 ------
 
-***Pay attention! Do not overflow water from plastic pools in experiments. Spilling water on other sensors may cause a short circuit or modules to be out of work. If batteries get wet, even explosion may occur. Do be extra careful! For younger users, please operate with your parents. To guarantee security, please obey guidances and safety regulations.***
+### Проект 12: Приложение для управления умной фермой
+
+------
+
+*** Будьте внимательны! Во время экспериментов не переливайте воду из пластиковых бассейнов. Попадание воды на другие датчики может привести к короткому замыканию или выходу из строя модулей. Если батареи намокнут, это может привести даже к взрыву. Будьте особенно осторожны! Для маленьких пользователей, пожалуйста, работайте с родителями. Для обеспечения безопасности, пожалуйста, соблюдайте инструкции и правила техники безопасности.***
 
 ------
 
 ![img](./scratch_img/cou121.png)
 
-#### Description
+#### Описание
 
-The APP management system is able to monitor multiple real-time index of the farm, such as temperature and humidity, pool water level, soil humidity, light intensity and rainfall.
+Система управления с помощью приложения может отслеживать различные показатели фермы в режиме реального времени, такие как температура и влажность, уровень воды в бассейне, влажность почвы, интенсивность освещения и количество осадков.
 
-Meanwhile, it also controls LED for lighting, water pump for irrigation, feeding box for feeding and fan for adjusting temperature and humidity.
+Кроме того, она также управляет светодиодным освещением, водяным насосом для орошения, кормушкой для кормления и вентилятором для регулировки температуры и влажности.
 
 ![img](./scratch_img/cou122.png)
 
 
 
-These functions can be realized via an APP on your phone, facilitating farm management. For more intelligence, a buzzer also adopted as an alarm.
+Эти функции могут быть реализованы с помощью приложения на вашем телефоне, что упрощает управление фермой. Для большей наглядности в качестве сигнала тревоги также используется звуковой сигнал.
 
 
 
@@ -4204,7 +4204,7 @@ These functions can be realized via an APP on your phone, facilitating farm mana
 
 
 
-#### Flow Diagram
+#### Блок-схема
 
 ![image-20230608150835987](./scratch_img/image-20230608150835987.png)
 
@@ -4214,43 +4214,43 @@ These functions can be realized via an APP on your phone, facilitating farm mana
 
 
 
-#### Test Code
+#### Тестовый код
 
-##### Code Flow
+##### Последовательность выполнения кода
 
 ![img](./scratch_img/flo12.png)
 
 
 
-##### Burn Code on ESP32
+##### Записать код на ESP32
 
-- Connect ESP32 to WiFi. In the following code, **ssid** and **pwd** are respectively WiFi name and password
+- Подключить ESP32 к Wi-Fi. В следующем коде **ssid** и **pwd** - это соответственно имя Wi-Fi и пароль.
 
 ![img](./scratch_img/st134.png)
 
-- LCD displays IP address
+- На ЖК-дисплее отображается IP-адрес
 
   ![img](./scratch_img/st135.png)
 
-- Initialize wifi server. After initialization, ESP32 and APP can communicate with each other through WIFI.
+- Инициализируем wifi-сервер. После инициализации ESP32 и приложение смогут взаимодействовать друг с другом через Wi-FI.
 
   ![img](./scratch_img/st142.png)
 
-- Check whether wifi is connected to client/APP
+- Проверьте, подключен ли Wi-Fi к клиенту/приложению.
 
   ![img](./scratch_img/st143.png)
 
-- Send real time data of sensors to APP:	
+- Отправка данных датчиков в реальном времени в приложение:	
 
   ![img](./scratch_img/st144.png)
 
-- ESP32 receives data from APP and determine them. NOTE: All data are in the format of String.
+- ESP32 получает данные из приложения и определяет их. ПРИМЕЧАНИЕ: Все данные представлены в формате строки.
 
   ![img](./scratch_img/st145.png)
 
 
 
-##### Complete Code
+##### Полный код
 
 ![img](./scratch_img/st146.png)
 
@@ -4260,25 +4260,25 @@ These functions can be realized via an APP on your phone, facilitating farm mana
 
 
 
-#### APP
+#### ПРИЛОЖЕНИЕ
 
-###### APP Download
+###### Скачать приложение
 
 ![img](./scratch_img/couapp1.png)
 
 ###### Android：
 
-- Open Google play, and search IOT farm to download.
+- Откройте Google Play и найдите IOT farm для загрузки.
 
 ​	![img](./scratch_img/couapp2.png)
 
-- In provided files, Android apk installing package is included:
+- В предоставленные файлы включен пакет для установки Android apk.:
 
   ![img](./scratch_img/cou123.png)
 
 ###### IOS：
 
-Search **IOT farm** in APP Store and tap to download.
+Найдите ** Ферму ИНТЕРНЕТА вещей** в APP Store и нажмите, чтобы загрузить.
 
 
 
@@ -4286,7 +4286,7 @@ Search **IOT farm** in APP Store and tap to download.
 
 
 
-##### APP Interface
+##### Интерфейс приложения
 
 ![img](./scratch_img/cou124.png)
 
@@ -4296,53 +4296,53 @@ Search **IOT farm** in APP Store and tap to download.
 
 
 
-##### APP Function Description
+##### Описание функций приложения
 
-1. When your phone and ESP32 board connect to the same WIFI, you only need to input IP address at upper-right conner to link them. 
+1. Когда ваш телефон и плата ESP32 подключаются к одному и тому же Wi-Fi, вам нужно только ввести IP-адрес в правом верхнем углу экрана, чтобы соединить их. 
 
 ![img](./scratch_img/cou126.png)
 
-2. Displays the temperature value of the farm in real time.
+2. Отображает значение температуры на ферме в режиме реального времени.
 
 ![img](./scratch_img/cou127.png)
 
-3. Displays the humidity value of the farm in real time.
+3. Отображает значение влажности на ферме в режиме реального времени.
 
 ![img](./scratch_img/cou128.png)
 
-4. Displays the soil humidity value of the farm in real time.
+4. Отображает значение влажности почвы на ферме в режиме реального времени.
 
 ![img](./scratch_img/cou129.png)
 
-5. Displays the sun brightness value of the farm in real time.
+5. Отображает значение яркости солнца на ферме в режиме реального времени.
 
 ![img](./scratch_img/cou1210.png)
 
-6. Displays the water level of the farm in real time.
+6. Отображает уровень воды на ферме в режиме реального времени.
 
 ![img](./scratch_img/cou1211.png)
 
-7. Displays the analog rainfall value of the farm in real time.
+7. Отображает аналоговое значение количества осадков на ферме в режиме реального времени.
 
 ![img](./scratch_img/cou1212.png)
 
-8. Control LED.
+8. Индикатор управления.
 
 ![img](./scratch_img/cou1213.png)
 
-9. Control irrigation via water pump.
+9. Управление поливом с помощью водяного насоса.
 
 ![img](./scratch_img/cou1214.png)
 
-10. Control the fan to adjust temperature.
+10. Включите вентилятор для регулировки температуры.
 
 ![img](./scratch_img/cou1215.png)
 
-11. Control servo to open or close feeding box.
+11. Управляйте сервоприводом, чтобы открыть или закрыть коробку подачи.
 
 ![img](./scratch_img/cou1216.png)
 
-12. Control buzzer to play music.
+12. Управление звуковым сигналом для воспроизведения музыки.
 
 ![img](./scratch_img/cou1217.png)
 
@@ -4352,23 +4352,23 @@ Search **IOT farm** in APP Store and tap to download.
 
 
 
-#### FAQ
+#### Часто задаваемые вопросы
 
-##### Q: Wifi always fails to be connected.
+##### Вопрос: Wi-Fi всегда не удается подключить.
 
-A: Move ESP32 to the side of the router and reboot the board, and just be patient to wait. If it still fails to connected, please check whether the WiFi name and password are correct.
-
-------
-
-##### Q: APP fails to connect to ESP32.
-
-A: Please make sure that APP and ESP32 are connected to the same WiFi.
+О: Переместите ESP32 в сторону от маршрутизатора, перезагрузите плату и просто наберитесь терпения и подождите. Если подключение по-прежнему не удается, пожалуйста, проверьте правильность имени Wi-Fi и пароля.
 
 ------
 
-##### Q: Fail to pump water?
+##### В: ПРИЛОЖЕНИЮ не удается подключиться к ESP32.
 
-A: Several pumping operations are required to fill the water pump before using it. These initial pumpings do not actually draw the water, but to introduce sufficient water into the pump. Only after the pump is full can water be carried out. So we are first for filling, not pumping.
+О: Пожалуйста, убедитесь, что приложение и ESP32 подключены к одному и тому же Wi-Fi.
+
+------
+
+##### В: Не удается откачать воду?
+
+О: Для заполнения водяного насоса перед его использованием требуется выполнить несколько операций по откачке воды. Эти первоначальные операции по откачке воды на самом деле не предназначены для забора воды, а для подачи достаточного количества воды в насос. Только после того, как насос заполнен, можно подавать воду. Таким образом, мы в первую очередь занимаемся наполнением, а не откачиванием.
 
 ------
 
@@ -4376,50 +4376,49 @@ A: Several pumping operations are required to fill the water pump before using i
 
 
 
-## FAQ
+## ЧАСТО задаваемые вопросы
 
-### Q: What type of batteries should this kit be equipped with?
+### Вопрос: Каким типом батареек должен быть оснащен этот комплект?
 
-A: Six AA batteries, each one with the diameter of 14MM and height of 49MM. Please install batteries in a correct way and do not reverse them! For younger learners, please operate under the accompaniment of parents.
+О: Шесть батареек типа АА, каждая диаметром 14 мм и высотой 49 мм. Пожалуйста, установите батарейки правильно и не меняйте их местами! Что касается младших школьников, пожалуйста, работайте в сопровождении родителей.
 
-### Q: An error occurs when burning programs on ESP32 mainboard.
+### Вопрос: При записи программ на материнскую плату ESP32 возникает ошибка.
 
 A:
 
-- Please check whether the COM port is correct.
-- Please check whether the selected board is correct.
+- Пожалуйста, проверьте правильность выбора COM-порта.
+- Пожалуйста, проверьте правильность выбора платы.
 
-### Q: Can this kit expands to other modules?
+### Вопрос: Можно ли использовать этот комплект для других модулей?
 
-A: Yes. When expanding to other modules, please check pin description to make sure that ESP32 pins work normally.
+а: да. При переходе на другие модули, пожалуйста, ознакомьтесь с описанием контактов, чтобы убедиться, что контакты ESP32 работают нормально.
 
-### Q: An error occurs when importing <Wire.h> library.
+### Вопрос: При импорте библиотеки <Wire.h> возникает ошибка.
 
-A: When installing ESP32 development board on arduino IDE, <Wire.h> library will be imported automatically, so you don't need to add it repeatedly.
-
-------
+О: При установке платы разработки ESP32 в arduino IDE библиотека <Wire.h> будет импортирована автоматически, поэтому вам не нужно будет добавлять ее повторно.
 
 ------
 
-## **Resources**
+------
 
-Keyestudio official website: 
+## **Ресурсы**
+
+Официальный сайт Keyestudio: 
 
 [https://www.keyestudio.com/](https://www.keyestudio.com/)
 
-Keyestudio wiki main page:
+Главная страница Keyestudio wiki:
 
 [https://wiki.keyestudio.com/Main_Page](https://wiki.keyestudio.com/Main_Page)
 
-ESP32 development board: 
+Плата разработки ESP32: 
 
 [https://wiki.keyestudio.com/KS5016_Keyestudio_ESP32_PLUS_Development_Board](https://wiki.keyestudio.com/KS5016_Keyestudio_ESP32_PLUS_Development_Board)
 
-Arduino official website: 
+Официальный сайт Arduino: 
 
 [https://www.arduino.cc/](https://www.arduino.cc/)
 
-ESP32 espressif official website: 
+Официальный сайт ESP32 espressif: 
 
 [https://www.espressif.com/](https://www.espressif.com/)
-
